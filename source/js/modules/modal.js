@@ -1,4 +1,4 @@
-export const modal = function () {
+export const createModal = function () {
   const openBtn = document.querySelector('[data-button-open-modal]');
   const closeBtn = document.querySelector('[data-close-modal]');
   const header = document.querySelector('[data-header]');
