@@ -1,0 +1,54 @@
+.page-header {
+  min-height: 880px;
+
+  background-color: $barossa;
+  background-image: url("../img/background-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-header__wrapper {
+  position: fixed;
+
+  width: 100%;
+  height: 120px;
+  padding-top: 30px;
+
+  background: linear-gradient($black-pearl, $color-transparent);
+  // border-bottom: 1px solid $whisper;
+}
+
+.page-header nav {
+  display: flex;
+}
+
+.page-header__button {
+  padding: 10px 15px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "RobotoCondensed", "Arial", sans-serif;
+  text-align: center;
+  color: $alice-blue;
+  text-transform: uppercase;
+
+  background-color: transparent;
+  border: 1px solid $alice-blue;
+  border-radius: 3px;
+
+  &:hover,
+  &:focus {
+    color: $deep-sky-blue;
+
+    border-color: $deep-sky-blue;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.page-header.is-open .modal {
+  display: block;
+}

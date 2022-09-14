@@ -1,0 +1,15 @@
+.contacts {
+  display: flex;
+}
+
+.contacts__icon {
+  fill: $color-neon-blue;
+}
+
+.contacts span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  font-family: "PTMono", "Inconsolata", monospace;
+  color: $alice-blue;
+}

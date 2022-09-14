@@ -1,0 +1,32 @@
+.printing-chambers h1 {
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 94px;
+  font-family: "RobotoCondensed", "Arial", sans-serif;
+  color: $alice-blue;
+  text-transform: uppercase;
+}
+
+.printing-chambers p {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 34px;
+  font-family: "PTMono", "Inconsolata", monospace;
+  color: $alice-blue;
+}
+
+.printing-chambers__button {
+  padding: 15px 25px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  text-align: center;
+  color: $alice-blue;
+  text-transform: uppercase;
+
+  background-color: $deep-sky-blue;
+  border-color: transparent;
+  border-radius: 3px;
+}
