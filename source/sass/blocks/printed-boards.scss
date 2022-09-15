@@ -1,4 +1,8 @@
-.printing-chambers h1 {
+.printed-boards .container {
+  padding-left: 100px;
+}
+
+.printed-boards h1 {
   font-weight: 700;
   font-size: 80px;
   line-height: 94px;
@@ -7,7 +11,7 @@
   text-transform: uppercase;
 }
 
-.printing-chambers p {
+.printed-boards p {
   font-weight: 400;
   font-size: 22px;
   line-height: 34px;
@@ -15,7 +19,7 @@
   color: $alice-blue;
 }
 
-.printing-chambers__button {
+.printed-boards__button {
   padding: 15px 25px;
 
   font-weight: 700;

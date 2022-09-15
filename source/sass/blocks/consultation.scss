@@ -1,0 +1,14 @@
+.consultation {
+  position: relative;
+
+  background-color: $deep-sky-blue;
+}
+
+.consultation::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  // background-image: url("../img/background-consultation.svg");
+
+  background-image: url("../img/logo-desktop.svg");
+}

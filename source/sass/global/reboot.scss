@@ -123,3 +123,9 @@ button,
 [type="submit"] {
   appearance: none;
 }
+
+.noselect {
+  user-select: none;
+
+  -webkit-touch-callout: none;
+}

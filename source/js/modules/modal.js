@@ -4,6 +4,9 @@ export const createModal = function () {
   const header = document.querySelector('[data-header]');
   const body = document.querySelector('body');
   const overlay = document.querySelector('[data-overlay]');
+  const modalName = document.querySelector('[data-modal-name');
+  const modal = document.querySelector('[data-modal');
+
 
   body.classList.remove('nojs');
 
@@ -25,10 +28,27 @@ export const createModal = function () {
     body.classList.remove('no-scroll');
   };
 
+  const modalShow = () => {
+    modalName.setAttribute('tabindex', '1');
+    modalName.focus();
+  }
+
+  const focusRestrict = (evt) => {
+    document.addEventListener('focus', (evt) => {
+      if (onModalOpened && !modal.contains(evt.target)) {
+        evt.stopPropagation();
+        modalName.focus();
+        console.log('ggg');
+      }
+    }, true);
+  }
+
   openBtn.addEventListener('click', (evt) => {
     evt.preventDefault();
       onModalOpened();
       document.addEventListener('keydown', onModalEscKeydown);
+      modalShow();
+      focusRestrict();
     });
 
   closeBtn.addEventListener('click', (evt) => {
@@ -39,22 +59,14 @@ export const createModal = function () {
     }
   });
 
-  // link.forEach((element) => {
-  //   element.addEventListener('click', (evt) => {
-  //     evt.preventDefault();
-  //     if (header.classList.contains('is-open')) {
-  //       onPopupClosed();
-  //     }
-  //   });
-  // });
-
   overlay.addEventListener('click', (evt) => {
     evt.preventDefault();
-    // let target = evt.target;
-    // if (target === overlay) {
-    if (header.classList.contains('is-open')) {
-      onPopupClosed();
-      document.removeEventListener('keydown', onModalEscKeydown);
+    let target = evt.target;
+    if (target === overlay) {
+      if (header.classList.contains('is-open')) {
+        onModalClosed();
+        document.removeEventListener('keydown', onModalEscKeydown);
+      }
     }
   });
 }

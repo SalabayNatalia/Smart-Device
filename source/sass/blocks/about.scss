@@ -1,0 +1,50 @@
+.about {
+  background-color: $alice;
+}
+
+.about__wrapper {
+  display: grid;
+
+  gap: 70px;
+  grid-template-columns: repeat(2, auto);
+
+  @media (max-width: $tablet-size-max) {
+    gap: 30px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    display: block;
+  }
+}
+
+.about__button {
+  padding: 14px 40px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Roboto Condensed";
+  text-align: center;
+  color: $deep-sky-blue;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  background-color: transparent;
+  border: 1px solid $deep-sky-blue;
+  border-radius: 3px;
+
+  &:hover,
+  &:focus {
+    color: $black-pearl;
+
+    border-color: $black-pearl;
+  }
+}
+
+.about.is-active .about__collapsible {
+  display: block;
+}
+
+.about__collapsible {
+  display: none;
+}

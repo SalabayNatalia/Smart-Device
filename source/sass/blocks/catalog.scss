@@ -1,0 +1,19 @@
+.catalog {
+  background-color: $black-pearl;
+}
+
+.catalog__products {
+  display: flex;
+}
+
+.catalog__products button {
+  width: 60px;
+  height: 60px;
+
+  background-color: $deep-sky-blue;
+  background-image: url("../img/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 4px 8px;
+  border-color: transparent;
+}

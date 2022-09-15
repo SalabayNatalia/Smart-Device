@@ -12,7 +12,7 @@
 
 <body class="nojs">
   <div class="wrapper">
-    <header class="page-header is-open" data-header>
+    <header class="page-header" data-header>
       <div class="page-header__wrapper">
         <div class="container">
           <nav>
@@ -50,7 +50,7 @@
       </div>
       <section class="page-header__modal modal">
         <div class="modal__overlay" data-overlay>
-          <div class="modal__wrapper">
+          <div class="modal__wrapper" data-modal>
             <h3>Закажите звонок</h3>
             <p>
               Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
@@ -58,79 +58,146 @@
             <form class="modal__form" action="https://echo.htmlacademy.ru" method="get" autocomplete="off">
               <div class="modal__inputs noselect">
                 <label class="visually-hidden" for="your-name">Ваше имя:</label>
-                <input id="your-name" type="text" placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" required>
+                <input id="your-name" type="text" autofocus placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" data-modal-name required>
                 <label class=" visually-hidden" for="phone">Ваш телефон:</label>
-                <input id="phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
-                <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
+                <input id="phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" tabindex="2" required>
+                <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос" tabindex="3"></textarea>
               </div>
-              <button class="modal__button noselect" type="submit">Отправить</button>
+              <button class="modal__button noselect" type="submit" tabindex="5">Отправить</button>
               <div class="modal__checkbox noselect">
-                <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox" required>
-                <label for="checkbox" class="form__checkbox-name">
+                <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox" tabindex="4" required>
+                <label for="checkbox" class="modal__checkbox-name">
                   Я согласен на обработку персональных данных
                 </label>
               </div>
             </form>
-            <button class="modal__close" data-close-modal type="button" aria-label="Закрыть окно"></button>
+            <button class="modal__close" data-close-modal type="button" aria-label="Закрыть окно" tabindex="6"></button>
           </div>
         </div>
       </section>
-      <div class="container">
-        <section class="page-header__printing-chambers printing-chambers">
-          <h1>Печатные палаты</h1>
+      <section class="page-header__printed-boards printed-boards">
+        <div class="container">
+          <h1>Печатные платы</h1>
           <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-          <a class="printing-chambers__button" data-anchor href="#consultation">Получить бесплатную консультацию</a>
-        </section>
-      </div>
+          <a class="printed-boards__button" data-anchor href="#consultation">Получить бесплатную консультацию</a>
+        </div>
+      </section>
     </header>
     <main>
-      <section id="consultation">
-        <h3>Остались вопросы? Задайте их нам!</h3>
+      <section class="advantages">
+        <div class="container">
+          <h2 class="visually-hidden">Преимущества</h2>
+          <ul class="list-reset">
+            <li class="advantages__item" tabindex="0">
+              <svg width="35" height="35">
+                <use xlink:href="img/sprite_auto.svg#stopwatch"></use>
+              </svg>
+              <h3>Оперативные сроки</h3>
+              <p>Усовершенствованная логистическая система позволяет нам&nbsp;просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
+            </li>
+            <li class="advantages__item" tabindex="0">
+              <svg width="35" height="35">
+                <use xlink:href="img/sprite_auto.svg#hired"></use>
+              </svg>
+              <h3>Крупные поставщики</h3>
+              <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспечивает хорошее качество нашей продукции.
+              </p>
+            </li>
+            <li class="advantages__item" tabindex="0">
+              <svg width="35" height="35">
+                <use xlink:href="img/sprite_auto.svg#detective"></use>
+              </svg>
+              <h3>Полная конфиденциальность</h3>
+              <p>По желанию клиента мы обеспечиваем полную конфиденциальность.</p>
+            </li>
+            <li class="advantages__item" tabindex="0">
+              <svg width="35" height="35">
+                <use xlink:href="img/sprite_auto.svg#tag"></use>
+              </svg>
+              <h3>Персонализация стоимости</h3>
+              <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.
+              </p>
+            </li>
+          </ul>
+        </div>
       </section>
-      <!-- <section class="intro">
-          <div class="container">
-            <h1>Тестовая страница.</h1>
-            <p>На данной странице показан пример модальных окон.</p>
-            <p>Перед началом разработки не забудьте удалить всё содержимое &#8249;main&#8250;&#8249;&#8260;main&#8250;.</p>
-            <p><a class="btn" href="#" data-open-modal="feedback">modal--feedback link</a></p>
-            <p><a class="btn" href="#" data-open-modal="success">modal--success link</a></p>
+      <section class="about">
+        <div class="container">
+          <div class="about__wrapper">
+            <div class="about__image">
+              <picture>
+                <source type="image/webp" srcset="img/2022.webp 1x, img/2022@2x.webp 2x" />
+                <!--desktop 1x: 150px; 2x: 300px -->
+                <img loading="lazy" src="img/2022.png" srcset="img/2022@2x.png 2x" width="150" height="320" alt="2022">
+              </picture>
+            </div>
+            <div class="about__content">
+              <h2>О компании</h2>
+              <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
+              </p>
+              <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
+              </p>
+              <a class="about__button" href="#" data-collapsible>Подробнее</a>
+              <div class="about__collapsible">
+                <p>Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14 офисов по всей стране и 20 городов присутствия.</p>
+                <p>Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и время наших клиентов</p>
+              </div>
+            </div>
           </div>
-        </section> -->
+        </div>
+      </section>
+      <section class="catalog">
+        <div class="container">
+          <h2>Smart Device предлагает следующие товары и услуги</h2>
+          <div class="catalog__products">
+            <a href="#">
+              <h3>Производство печатных плат</h3>
+              <img src="img/product1.jpg" width="350" height="650" alt="нейтральный фон">
+              <button type="button"></button>
+            </a>
+            <a href="#">
+              <h3>Монтаж печатных плат</h3>
+              <img src="img/product2.jpg" width="350" height="650" alt="нейтральный фон">
+              <button type="button"></button>
+            </a>
+            <a href="#">
+              <h3>Комплектующие для светотехники</h3>
+              <img src="img/product3.jpg" width="350" height="650" alt="нейтральный фон">
+              <button type="button"></button>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="consultation" id="consultation">
+        <div class="container">
+          <div class="consultation__wrapper">
+            <img src="img/letter.png" width="510" height="285" alt="бумажный самолётик">
+            <h3>Остались вопросы? Задайте их нам!</h3>
+            <p>Мы проконсультируем Вас бесплатно</p>
+            <form class="consultation__form form" action="https://echo.htmlacademy.ru" method="get">
+              <div class="form__inputs noselect">
+                <label class="visually-hidden" for="name">Ваше имя:</label>
+                <input id="name" type="text" autofocus placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" required>
+                <label class=" visually-hidden" for="your-phone">Ваш телефон:</label>
+                <input id="your-phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
+                <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
+              </div>
+              <button class="form__button" type="submit">Задать вопрос</button>
+              <div class="form__checkbox noselect">
+                <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox-2" required>
+                <label for="checkbox-2" class="form__checkbox-name">
+                  Я согласен на обработку персональных данных
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="container"></div>
     </footer>
   </div>
-
-  <!-- Модалки -->
-  <!-- <div class="modal modal--preload" data-modal="feedback">
-    <div class="modal__wrapper">
-      <div class="modal__overlay" data-close-modal></div>
-      <div class="modal__content">
-        <p class="modal__description">Обычная модалка</p>
-        <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-          <svg width="15" height="15">
-            <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-    <div class="modal__wrapper">
-      <div class="modal__overlay" data-close-modal></div>
-      <div class="modal__content">
-        <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
-        <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-          <svg width="15" height="15">
-            <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div> -->
-
   <!-- <script src="js/vendor.min.js"></script> -->
   <script src="js/main.min.js"></script>
 </body>
