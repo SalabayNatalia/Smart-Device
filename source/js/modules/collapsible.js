@@ -7,9 +7,8 @@ export const openText = function () {
       about.classList.remove('is-active');
       collapsible.textContent = 'Подробнее';
     } else {
-    about.classList.add('is-active');
-    collapsible.textContent = 'Свернуть';
+      about.classList.add('is-active');
+      collapsible.textContent = 'Свернуть';
     }
-  }
-)};
-
+  });
+};

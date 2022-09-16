@@ -14,24 +14,30 @@
   height: 120px;
   padding-top: 30px;
 
-  background: linear-gradient($black-pearl, $color-transparent);
-  // border-bottom: 1px solid $whisper;
+  background: linear-gradient($black-pearl 70%, $color-transparent);
 }
 
 .page-header nav {
   display: flex;
+  align-items: center;
+
+  column-gap: 160px;
 }
 
 .page-header__button {
-  padding: 10px 15px;
+  align-self: self-start;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 9px 17px 13px 17px;
 
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  font-family: "RobotoCondensed", "Arial", sans-serif;
+  font-family: $ff-roboto-condensed;
   text-align: center;
   color: $alice-blue;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 
   background-color: transparent;
   border: 1px solid $alice-blue;
@@ -46,6 +52,10 @@
 
   &:active {
     opacity: 0.5;
+  }
+
+  @media (max-width: $tablet-size-max) {
+    display: none;
   }
 }
 

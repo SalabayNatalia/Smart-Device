@@ -31,25 +31,24 @@ export const createModal = function () {
   const modalShow = () => {
     modalName.setAttribute('tabindex', '1');
     modalName.focus();
-  }
+  };
 
-  const focusRestrict = (evt) => {
+  const focusRestrict = () => {
     document.addEventListener('focus', (evt) => {
       if (onModalOpened && !modal.contains(evt.target)) {
         evt.stopPropagation();
         modalName.focus();
-        console.log('ggg');
       }
     }, true);
-  }
+  };
 
   openBtn.addEventListener('click', (evt) => {
     evt.preventDefault();
-      onModalOpened();
-      document.addEventListener('keydown', onModalEscKeydown);
-      modalShow();
-      focusRestrict();
-    });
+    onModalOpened();
+    document.addEventListener('keydown', onModalEscKeydown);
+    modalShow();
+    focusRestrict();
+  });
 
   closeBtn.addEventListener('click', (evt) => {
     evt.preventDefault();
@@ -69,4 +68,4 @@ export const createModal = function () {
       }
     }
   });
-}
+};

@@ -1,5 +1,6 @@
 .advantages {
-  padding: 120px 0;
+  padding-top: 120px;
+  padding-bottom: 90px;
 
   background-color: $alice;
 }
@@ -7,7 +8,7 @@
 .advantages ul {
   display: grid;
 
-  gap: 40px;
+  gap: 32px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
@@ -16,7 +17,7 @@
   max-width: 100%;
   height: auto;
   min-height: 300px;
-  padding: 40px 45px 35px;
+  padding: 39px 39px 35px;
 
   background-color: transparent;
   background-repeat: no-repeat;
@@ -50,19 +51,21 @@
 }
 
 .advantages__item svg {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
+  margin-bottom: 15px;
 
   fill: $deep-sky-blue;
 }
 
 .advantages__item h3 {
   margin-top: 0;
+  margin-bottom: 13px;
 
   font-weight: 400;
   font-size: 24px;
   line-height: 140%;
-  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-family: $ff-roboto-condensed;
   color: $deep-sky-blue;
 }
 
@@ -73,6 +76,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 135%;
-  font-family: "PT Mono";
+  font-family: $ff-pt-mono;
   color: $black-pearl;
 }
