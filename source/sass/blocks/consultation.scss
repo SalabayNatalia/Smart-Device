@@ -1,5 +1,6 @@
 .consultation {
-  padding-top: 164px;
+  padding-top: 165px;
+  padding-bottom: 279px;
 
   background-color: $deep-sky-blue;
   background-image: url("../img/background-consultation.svg");
@@ -9,20 +10,24 @@
 }
 
 .consultation__wrapper {
-  display: grid;
+  padding-left: 625px;
+  // display: grid;
+  // column-gap: 30px;
+  // grid-template-columns: repeat(2, 1fr);
 
-  column-gap: 30px;
-
-  grid-template-columns: repeat(2, 1fr);
+  background-image: url(../img/letter.png);
+  background-repeat: no-repeat;
+  background-position: 0 82px;
 }
 
-.consultation img {
-  align-self: center;
+.consultation__inputs {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .consultation h3 {
   margin-top: 0;
-  margin-bottom: 11px;
+  margin-bottom: 12px;
 
   font-weight: 400;
   font-size: 36px;
@@ -63,17 +68,22 @@
 // }
 
 .consultation input {
-  width: calc(50% - 15px);
+  width: 275px;
+  padding: 12px 13px;
+}
+
+.consultation__input:not(:last-child) {
+  margin-right: 30px;
 }
 
 .consultation textarea {
-  width: 100%;
+  width: 580px;
+  margin-bottom: 34px;
+  padding: 21px 12px 87px 13px;
 }
 
 .consultation input,
 .consultation textarea {
-  padding: 13px;
-
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -99,14 +109,9 @@
   margin-bottom: 20px;
 }
 
-.consultation__inputs textarea {
-  margin-bottom: 25px;
-}
-
 .consultation__button {
-  width: 50%;
   margin-bottom: 20px;
-  padding: 15px 60px;
+  padding: 13px 68px 11px;
 
   font-weight: 700;
   font-size: 16px;

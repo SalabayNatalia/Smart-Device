@@ -16,8 +16,11 @@
   position: relative;
 
   width: 500px;
-  margin: 146px auto;
-  padding: 40px;
+  margin: 146px 700px;
+  padding-top: 36px;
+  padding-right: 37px;
+  padding-bottom: 43px;
+  padding-left: 41px;
 
   background-color: $deep-sky-blue;
   border-radius: 3px;
@@ -25,7 +28,7 @@
 
 .modal h3 {
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 
   font-weight: 400;
   font-size: 30px;
@@ -48,7 +51,6 @@
 .modal__inputs input,
 .modal__inputs textarea {
   width: 100%;
-  padding: 15px;
 
   font-weight: 400;
   font-size: 16px;
@@ -72,17 +74,19 @@
 }
 
 .modal__inputs input {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
+  padding: 10px 15px 12px 14px;
 }
 
 .modal__inputs textarea {
-  margin-bottom: 25px;
+  margin-bottom: 16px;
+  padding: 21px 15px 88px 14px;
 }
 
 .modal__button {
   width: 100%;
   margin-bottom: 20px;
-  padding: 15px 60px;
+  padding: 15px 60px 8px;
 
   font-weight: 700;
   font-size: 16px;
@@ -119,7 +123,7 @@
   min-width: 370px;
 
   font-weight: 400;
-  // font-size: 14px;
+  font-size: 14px;
   line-height: 16px;
   font-family: $ff-pt-mono;
   color: $color-default-white;
@@ -128,18 +132,24 @@
 }
 
 .modal__checkbox input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+  margin-left: 9px;
 
   background-color: transparent;
   border: 1px solid $color-default-white;
+  border-radius: 3px;
   cursor: pointer;
 
   appearance: none;
 
   &:hover,
-  &:active {
+  &:focus {
     border-color: $color-neon-blue;
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }
 
@@ -151,8 +161,8 @@
 
 .modal__close {
   position: absolute;
-  top: 19px;
-  right: 15px;
+  top: 25px;
+  right: 23px;
   z-index: 10;
 
   display: block;

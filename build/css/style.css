@@ -425,6 +425,7 @@ template {
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  outline: 1px solid pink;
 }
 
 html,
@@ -705,15 +706,18 @@ button,
 .modal__wrapper {
   position: relative;
   width: 500px;
-  margin: 146px auto;
-  padding: 40px;
+  margin: 146px 700px;
+  padding-top: 36px;
+  padding-right: 37px;
+  padding-bottom: 43px;
+  padding-left: 41px;
   background-color: #00b2ff;
   border-radius: 3px;
 }
 
 .modal h3 {
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   font-weight: 400;
   font-size: 30px;
   line-height: 140%;
@@ -734,7 +738,6 @@ button,
 .modal__inputs input,
 .modal__inputs textarea {
   width: 100%;
-  padding: 15px;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -780,17 +783,19 @@ button,
 }
 
 .modal__inputs input {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
+  padding: 10px 15px 12px 14px;
 }
 
 .modal__inputs textarea {
-  margin-bottom: 25px;
+  margin-bottom: 16px;
+  padding: 21px 15px 88px 14px;
 }
 
 .modal__button {
   width: 100%;
   margin-bottom: 20px;
-  padding: 15px 60px;
+  padding: 15px 60px 8px;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
@@ -824,6 +829,7 @@ button,
 .modal__checkbox label {
   min-width: 370px;
   font-weight: 400;
+  font-size: 14px;
   line-height: 16px;
   font-family: "PTMono", "Inconsolata", monospace;
   color: #ffffff;
@@ -831,10 +837,12 @@ button,
 }
 
 .modal__checkbox input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+  margin-left: 9px;
   background-color: transparent;
   border: 1px solid #ffffff;
+  border-radius: 3px;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -842,8 +850,12 @@ button,
 }
 
 .modal__checkbox input[type="checkbox"]:hover,
-.modal__checkbox input[type="checkbox"]:active {
+.modal__checkbox input[type="checkbox"]:focus {
   border-color: #2c39f2;
+}
+
+.modal__checkbox input[type="checkbox"]:active {
+  opacity: 0.5;
 }
 
 .modal__checkbox input[type="checkbox"]:checked {
@@ -854,8 +866,8 @@ button,
 
 .modal__close {
   position: absolute;
-  top: 19px;
-  right: 15px;
+  top: 25px;
+  right: 23px;
   z-index: 10;
   display: block;
   width: 20px;
@@ -884,6 +896,7 @@ button,
 
 .page-header__wrapper {
   position: fixed;
+  z-index: 100;
   width: 100%;
   height: 120px;
   padding-top: 30px;
@@ -1164,57 +1177,20 @@ button,
   color: #ffffff;
 }
 
-.catalog__wrapper {
-  max-width: 100%;
-  height: auto;
-}
-
 .catalog__list {
   display: -ms-grid;
   display: grid;
-  max-width: 1220px;
   gap: 85px;
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
 }
 
-.catalog__item a {
+.catalog__item {
   position: relative;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
 }
 
-.catalog__item a--product1 {
-  background-image: url("../img/product1.jpg");
-}
-
-.catalog__item a--product2 {
-  background-image: url("../img/product2.jpg");
-}
-
-.catalog__item a--product3 {
-  background-image: url("../img/product3.jpg");
-}
-
-.catalog__list a {
-  display: block;
-}
-
-.catalog__list a:hover {
-  opacity: 0.5;
-}
-
-.catalog__item h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 150%;
-  font-family: "RobotoCondensed", "Arial", sans-serif;
-  color: #ffffff;
-}
-
-.catalog__list button {
+.catalog__item::before {
+  content: "";
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1228,8 +1204,49 @@ button,
   border-color: transparent;
 }
 
+.catalog__item:hover,
+.catalog__item:focus {
+  opacity: 0.5;
+}
+
+.catalog__item:active {
+  opacity: 0.2;
+}
+
+.catalog__link {
+  display: block;
+  min-height: 650px;
+  padding: 50px 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.catalog__link--product1 {
+  background-image: url("../img/product1.jpg");
+}
+
+.catalog__link--product2 {
+  background-image: url("../img/product2.jpg");
+}
+
+.catalog__link--product3 {
+  background-image: url("../img/product3.jpg");
+}
+
+.catalog__item h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 100px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  font-family: "RobotoCondensed", "Arial", sans-serif;
+  color: #ffffff;
+}
+
 .consultation {
-  padding-top: 164px;
+  padding-top: 165px;
+  padding-bottom: 279px;
   background-color: #00b2ff;
   background-image: url("../img/background-consultation.svg");
   background-repeat: no-repeat;
@@ -1238,24 +1255,23 @@ button,
 }
 
 .consultation__wrapper {
-  display: -ms-grid;
-  display: grid;
-  -webkit-column-gap: 30px;
-  -moz-column-gap: 30px;
-  column-gap: 30px;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
+  padding-left: 625px;
+  background-image: url(../img/letter.png);
+  background-repeat: no-repeat;
+  background-position: 0 82px;
 }
 
-.consultation img {
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+.consultation__inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .consultation h3 {
   margin-top: 0;
-  margin-bottom: 11px;
+  margin-bottom: 12px;
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
@@ -1279,16 +1295,22 @@ button,
 }
 
 .consultation input {
-  width: calc(50% - 15px);
+  width: 275px;
+  padding: 12px 13px;
+}
+
+.consultation__input:not(:last-child) {
+  margin-right: 30px;
 }
 
 .consultation textarea {
-  width: 100%;
+  width: 580px;
+  margin-bottom: 34px;
+  padding: 21px 12px 87px 13px;
 }
 
 .consultation input,
 .consultation textarea {
-  padding: 13px;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -1337,14 +1359,9 @@ button,
   margin-bottom: 20px;
 }
 
-.consultation__inputs textarea {
-  margin-bottom: 25px;
-}
-
 .consultation__button {
-  width: 50%;
   margin-bottom: 20px;
-  padding: 15px 60px;
+  padding: 13px 68px 11px;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
@@ -1464,11 +1481,30 @@ button,
   .about__wrapper {
     gap: 30px;
   }
+
+  .catalog__list {
+    display: block;
+  }
+
+  .catalog__link--product1 {
+    min-height: 250px;
+    background-image: url("../img/product1-tablet.jpg");
+  }
+
+  .catalog__link--product2 {
+    min-height: 250px;
+    background-image: url("../img/product2-tablet.jpg");
+  }
+
+  .catalog__link--product3 {
+    min-height: 250px;
+    background-image: url("../img/product3-tablet.jpg");
+  }
 }
 
 @media (max-width: 767px) {
   .container {
-    max-width: 767px;
+    max-width: 769px;
     padding-right: 25px;
     padding-left: 25px;
   }
