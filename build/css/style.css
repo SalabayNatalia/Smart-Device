@@ -425,7 +425,6 @@ template {
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  outline: 1px solid pink;
 }
 
 html,
@@ -900,21 +899,28 @@ button,
   width: 100%;
   height: 120px;
   padding-top: 30px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #041827), to(rgba(255, 255, 255, 0)));
-  background: -o-linear-gradient(#041827 70%, rgba(255, 255, 255, 0));
-  background: linear-gradient(#041827 70%, rgba(255, 255, 255, 0));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, #041827), to(rgba(255, 255, 255, 0)));
+  background: -o-linear-gradient(#041827 90%, rgba(255, 255, 255, 0));
+  background: linear-gradient(#041827 90%, rgba(255, 255, 255, 0));
 }
 
 .page-header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-column-gap: 160px;
-  -moz-column-gap: 160px;
-  column-gap: 160px;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
+
+.page-header__icon {
+  fill: #00b2ff;
 }
 
 .page-header__button {
@@ -922,7 +928,7 @@ button,
   -ms-grid-row-align: self-start;
   align-self: self-start;
   margin-top: 5px;
-  margin-left: 5px;
+  margin-right: 60px;
   padding: 9px 17px 13px 17px;
   font-weight: 700;
   font-size: 14px;
@@ -955,9 +961,12 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 122px;
-  -moz-column-gap: 122px;
-  column-gap: 122px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
 }
 
 .contacts__icon {
@@ -974,15 +983,23 @@ button,
   color: #f2f5f6;
 }
 
-.printed-boards .container {
+.logo {
+  margin-right: 9px;
+}
+
+.printed-boards {
   padding-top: 306px;
+  padding-bottom: 283px;
+}
+
+.printed-boards .container {
   padding-right: 400px;
   padding-left: 149px;
 }
 
 .printed-boards h1 {
   margin-top: 0;
-  margin-bottom: 31px;
+  margin-bottom: 30px;
   font-weight: 700;
   font-size: 80px;
   line-height: 94px;
@@ -994,7 +1011,7 @@ button,
 
 .printed-boards p {
   margin-top: 0;
-  margin-bottom: 61px;
+  margin-bottom: 47px;
   font-weight: 400;
   font-size: 22px;
   line-height: 34px;
@@ -1003,7 +1020,9 @@ button,
 }
 
 .printed-boards__button {
-  padding: 15px 27px;
+  display: block;
+  width: 410px;
+  padding: 17px 20px;
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
@@ -1026,7 +1045,7 @@ button,
 .advantages ul {
   display: -ms-grid;
   display: grid;
-  gap: 32px;
+  gap: 30px;
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
   -ms-grid-rows: (1fr)[2];
@@ -1037,7 +1056,7 @@ button,
   max-width: 100%;
   height: auto;
   min-height: 300px;
-  padding: 39px 39px 35px;
+  padding: 39px 41px 32px;
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: 35px 35px;
@@ -1217,6 +1236,7 @@ button,
   display: block;
   min-height: 650px;
   padding: 50px 40px;
+  background-color: #3c3639;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1246,7 +1266,7 @@ button,
 
 .consultation {
   padding-top: 165px;
-  padding-bottom: 279px;
+  padding-bottom: 249px;
   background-color: #00b2ff;
   background-image: url("../img/background-consultation.svg");
   background-repeat: no-repeat;
@@ -1254,11 +1274,25 @@ button,
   background-size: cover;
 }
 
+.consultation .container {
+  padding-right: 30px;
+}
+
 .consultation__wrapper {
-  padding-left: 625px;
-  background-image: url(../img/letter.png);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/letter.png");
   background-repeat: no-repeat;
-  background-position: 0 82px;
+  background-position-y: 82px;
+  background-size: 511px auto;
+}
+
+.consultation__wrapper-form {
+  max-width: 585px;
+  margin-left: auto;
 }
 
 .consultation__inputs {
@@ -1272,6 +1306,7 @@ button,
 .consultation h3 {
   margin-top: 0;
   margin-bottom: 12px;
+  margin-left: -5px;
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
@@ -1282,7 +1317,6 @@ button,
 .consultation p {
   margin-top: 0;
   margin-bottom: 35px;
-  margin-left: 5px;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -1290,16 +1324,12 @@ button,
   color: #ffffff;
 }
 
-.consultation__form {
-  margin-left: 5px;
-}
-
 .consultation input {
   width: 275px;
   padding: 12px 13px;
 }
 
-.consultation__input:not(:last-child) {
+.consultation__input-name {
   margin-right: 30px;
 }
 
@@ -1360,8 +1390,8 @@ button,
 }
 
 .consultation__button {
-  margin-bottom: 20px;
-  padding: 13px 68px 11px;
+  margin-right: 50px;
+  padding: 13px 68px 10px;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
@@ -1389,12 +1419,16 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 11px;
 }
 
 .consultation__checkbox label {
-  min-width: 370px;
   font-weight: 400;
+  font-size: 14px;
   line-height: 16px;
   font-family: "PTMono", "Inconsolata", monospace;
   color: #ffffff;
@@ -1402,10 +1436,13 @@ button,
 }
 
 .consultation__checkbox input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 15px;
+  margin-bottom: 0;
+  padding: 0;
   background-color: transparent;
   border: 1px solid #ffffff;
+  border-radius: 1px;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1470,35 +1507,183 @@ button,
     padding-left: 50px;
   }
 
+  .page-header {
+    min-height: 640px;
+    background-image: url("../img/background-header-tablet.jpg");
+  }
+
+  .page-header__wrapper {
+    height: 100px;
+    padding-top: 20px;
+  }
+
   .page-header__button {
     display: none;
+  }
+
+  .contacts {
+    -ms-flex-item-align: start;
+    -ms-grid-row-align: start;
+    align-self: start;
+    margin-top: 10px;
+    margin-right: 30px;
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
   }
 
   .contacts span {
     display: none;
   }
 
+  .printed-boards {
+    padding-top: 180px;
+    padding-bottom: 205px;
+  }
+
+  .printed-boards .container {
+    padding-right: 100px;
+    padding-left: 50px;
+  }
+
+  .printed-boards h1 {
+    margin-bottom: 0;
+    font-size: 64px;
+    line-height: 75px;
+  }
+
+  .printed-boards p {
+    margin-bottom: 57px;
+  }
+
+  .printed-boards__button {
+    margin-left: 45px;
+  }
+
+  .advantages {
+    padding-top: 80px;
+    padding-bottom: 47px;
+  }
+
+  .advantages ul {
+    gap: 29px;
+  }
+
+  .advantages__item svg {
+    margin-bottom: 10px;
+  }
+
+  .advantages__item h3 {
+    margin-bottom: 8px;
+  }
+
+  .about {
+    padding-bottom: 40px;
+  }
+
+  .about__image {
+    margin-top: 4px;
+    margin-left: -4px;
+  }
+
   .about__wrapper {
     gap: 30px;
+  }
+
+  .about p {
+    margin-bottom: 18px;
+  }
+
+  .about__button {
+    margin-top: 0;
+    padding-top: 12px;
+  }
+
+  .catalog {
+    padding-top: 56px;
+    padding-bottom: 42px;
+  }
+
+  .catalog h2 {
+    margin-bottom: 37px;
   }
 
   .catalog__list {
     display: block;
   }
 
-  .catalog__link--product1 {
+  .catalog__item {
+    margin-bottom: 31px;
+  }
+
+  .catalog__link {
     min-height: 250px;
+    padding: 37px 45px;
+  }
+
+  .catalog__link--product1 {
     background-image: url("../img/product1-tablet.jpg");
   }
 
   .catalog__link--product2 {
-    min-height: 250px;
     background-image: url("../img/product2-tablet.jpg");
   }
 
   .catalog__link--product3 {
-    min-height: 250px;
     background-image: url("../img/product3-tablet.jpg");
+  }
+
+  .catalog__item h3 {
+    padding-right: 445px;
+  }
+
+  .consultation {
+    padding-top: 45px;
+    padding-bottom: 124px;
+    background-image: none;
+  }
+
+  .consultation .container {
+    padding-right: 50px;
+  }
+
+  .consultation__wrapper {
+    background-image: none;
+  }
+
+  .consultation__wrapper-form {
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .consultation h3 {
+    margin-bottom: 8px;
+    margin-left: 0;
+  }
+
+  .consultation p {
+    margin-bottom: 24px;
+  }
+
+  .consultation input {
+    width: 320px;
+  }
+
+  .consultation textarea {
+    width: 100%;
+    margin-bottom: 35px;
+    padding-top: 28px;
+    padding-bottom: 79px;
+  }
+
+  .consultation__button {
+    margin-right: 85px;
+    padding-top: 15px;
+    padding-bottom: 8px;
+  }
+
+  .consultation__checkbox {
+    margin-top: 5px;
   }
 }
 
@@ -1509,16 +1694,184 @@ button,
     padding-left: 25px;
   }
 
+  .page-header {
+    min-height: 560px;
+    background-image: url("../img/background-header-mobile.jpg");
+  }
+
+  .page-header__wrapper {
+    height: 70px;
+    padding-top: 14px;
+  }
+
+  .contacts {
+    margin-top: 6px;
+    margin-right: 20px;
+  }
+
   .logo {
     width: 35px;
     height: 35px;
   }
 
+  .printed-boards {
+    padding-top: 149px;
+    padding-bottom: 168px;
+  }
+
+  .printed-boards .container {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .printed-boards h1 {
+    margin-bottom: 9px;
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .printed-boards p {
+    margin-bottom: 44px;
+    font-size: 14px;
+    line-height: 155%;
+  }
+
+  .printed-boards__button {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .advantages {
+    padding-top: 49px;
+  }
+
+  .advantages ul {
+    -ms-grid-columns: none;
+    grid-template-columns: none;
+    -ms-grid-rows: (1fr)[4];
+    grid-template-rows: repeat(4, 1fr);
+  }
+
   .advantages__item {
-    padding: 30px;
+    min-height: 325px;
+    padding: 30px 24px 75px;
+  }
+
+  .advantages__item svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .advantages__item h3 {
+    font-size: 20px;
+    line-height: 140%;
+  }
+
+  .advantages__item p {
+    font-size: 14px;
+    line-height: 135%;
+  }
+
+  .about__image {
+    display: none;
   }
 
   .about__wrapper {
     display: block;
+  }
+
+  .about h2 {
+    font-size: 28px;
+    line-height: 140%;
+  }
+
+  .about p {
+    font-size: 14px;
+    line-height: 134%;
+  }
+
+  .about__button {
+    max-width: 160px;
+    padding: 8px 38px;
+  }
+
+  .catalog {
+    padding-top: 47px;
+    padding-bottom: 53px;
+  }
+
+  .catalog h2 {
+    margin-bottom: 29px;
+    padding-right: 10px;
+    font-size: 28px;
+    line-height: 140%;
+  }
+
+  .catalog__item::before {
+    width: 40px;
+    height: 40px;
+  }
+
+  .catalog__link {
+    padding: 26px 107px 29px 30px;
+  }
+
+  .catalog__link--product1 {
+    background-image: url("../img/product1-mobile.jpg");
+  }
+
+  .catalog__link--product2 {
+    background-image: url("../img/product2-mobile.jpg");
+  }
+
+  .catalog__link--product3 {
+    background-image: url("../img/product3-mobile.jpg");
+  }
+
+  .catalog__item h3 {
+    padding-right: 0;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .consultation {
+    padding-top: 46px;
+  }
+
+  .consultation .container {
+    padding-right: 25px;
+  }
+
+  .consultation h3 {
+    font-size: 30px;
+    line-height: 140%;
+  }
+
+  .consultation p {
+    margin-bottom: 34px;
+    font-size: 14px;
+    line-height: 134%;
+  }
+
+  .consultation input {
+    width: 100%;
+  }
+
+  .consultation__input-name {
+    margin-right: 0;
+  }
+
+  .consultation textarea {
+    margin-bottom: 31px;
+    padding-top: 21px;
+    padding-bottom: 111px;
+  }
+
+  .consultation__button {
+    margin-right: 0;
   }
 }

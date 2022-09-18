@@ -121,7 +121,7 @@
                 <use xlink:href="img/sprite_auto.svg#stopwatch"></use>
               </svg>
               <h3>Оперативные сроки</h3>
-              <p>Усовершенствованная логистическая система позволяет нам&nbsp;просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
+              <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
             </li>
             <li class="advantages__item" tabindex="0">
               <svg width="35" height="35">
@@ -136,14 +136,14 @@
                 <use xlink:href="img/sprite_auto.svg#detective"></use>
               </svg>
               <h3>Полная конфиденциальность</h3>
-              <p>По желанию клиента мы обеспечиваем полную конфиденциальность.</p>
+              <p>По желанию клиента&nbsp;&nbsp;мы обеспечиваем полную конфиденциальность.</p>
             </li>
             <li class="advantages__item" tabindex="0">
               <svg width="35" height="35">
                 <use xlink:href="img/sprite_auto.svg#tag"></use>
               </svg>
               <h3>Персонализация стоимости</h3>
-              <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.
+              <p>Мы&nbsp;&nbsp;подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.
               </p>
             </li>
           </ul>
@@ -163,7 +163,7 @@
               <h2>О компании</h2>
               <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
               </p>
-              <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
+              <p data-about-mobile>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
               </p>
               <a class="about__button" href="#" data-collapsible>Подробнее</a>
               <div class="about__collapsible">
@@ -176,7 +176,7 @@
       </section>
       <section class="catalog">
         <div class="container">
-          <h2>Smart Device предлагает следующие товары и услуги</h2>
+          <h2 data-catalog-header>Smart Device предлагает следующие товары и услуги</h2>
           <ul class="catalog__list list-reset">
             <li class="catalog__item">
               <a class="catalog__link catalog__link--product1" href="#">
@@ -190,7 +190,7 @@
             </li>
             <li class="catalog__item">
               <a class="catalog__link catalog__link--product3" href="#">
-                <h3>Комплектующие для светотехники</h3>
+                <h3>Комплектующие для&nbsp;светотехники</h3>
               </a>
             </li>
           </ul>
@@ -231,7 +231,7 @@
               <p>Мы проконсультируем Вас бесплатно</p>
               <form class="consultation__form" action="https://echo.htmlacademy.ru" method="get">
                 <div class="consultation__inputs noselect">
-                  <div class="consultation__input">
+                  <div class="consultation__input-name">
                     <label class="visually-hidden" for="name">Ваше имя:</label>
                     <input id="name" type="text" placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" required>
                   </div>
@@ -240,14 +240,21 @@
                     <input id="your-phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
                   </div>
                   <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
+                  <button class="consultation__button" type="submit">Задать вопрос</button>
+                  <div class="consultation__checkbox noselect">
+                    <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox-2" required>
+                    <label for="checkbox-2" class="form__checkbox-name">
+                      Я согласен на обработку<br>персональных данных
+                    </label>
+                  </div>
                 </div>
-                <button class="consultation__button" type="submit">Задать вопрос</button>
+                <!-- <button class="consultation__button" type="submit">Задать вопрос</button>
                 <div class="consultation__checkbox noselect">
                   <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox-2" required>
                   <label for="checkbox-2" class="form__checkbox-name">
                     Я согласен на обработку персональных данных
                   </label>
-                </div>
+                </div> -->
               </form>
             </div>
           </div>

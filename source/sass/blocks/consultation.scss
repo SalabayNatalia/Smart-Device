@@ -1,23 +1,71 @@
 .consultation {
   padding-top: 165px;
-  padding-bottom: 279px;
+  padding-bottom: 249px;
 
   background-color: $deep-sky-blue;
   background-image: url("../img/background-consultation.svg");
   background-repeat: no-repeat;
   background-position: -451px -570px;
   background-size: cover;
+
+  @media (max-width: $tablet-size-max) {
+    padding-top: 45px;
+    padding-bottom: 124px;
+
+    background-image: none;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    padding-top: 46px;
+  }
 }
 
-.consultation__wrapper {
-  padding-left: 625px;
-  // display: grid;
-  // column-gap: 30px;
-  // grid-template-columns: repeat(2, 1fr);
+.consultation .container {
+  padding-right: 30px;
 
-  background-image: url(../img/letter.png);
+  @media (max-width: $tablet-size-max) {
+    padding-right: 50px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    padding-right: 25px;
+  }
+}
+
+// .consultation__wrapper {
+//   padding-left: 625px;
+// display: grid;
+// column-gap: 30px;
+// grid-template-columns: repeat(2, 1fr);
+
+//   background-image: url(../img/letter.png);
+//   background-repeat: no-repeat;
+//   background-position: 0 82px;
+
+// }
+.consultation__wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("../img/letter.png");
   background-repeat: no-repeat;
-  background-position: 0 82px;
+  background-position-y: 82px;
+  background-size: 511px auto;
+
+  @media (max-width: $tablet-size-max) {
+    background-image: none;
+  }
+}
+
+.consultation__wrapper-form {
+  max-width: 585px;
+  margin-left: auto;
+
+  @media (max-width: $tablet-size-max) {
+    max-width: 100%;
+    margin: auto;
+  }
 }
 
 .consultation__inputs {
@@ -28,28 +76,45 @@
 .consultation h3 {
   margin-top: 0;
   margin-bottom: 12px;
+  margin-left: -5px;
 
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
   font-family: $ff-roboto-condensed;
   color: $color-default-white;
+
+  @media (max-width: $tablet-size-max) {
+    margin-bottom: 8px;
+    margin-left: 0;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    font-size: 30px;
+    line-height: 140%;
+  }
 }
 
 .consultation p {
   margin-top: 0;
   margin-bottom: 35px;
-  margin-left: 5px;
 
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   font-family: $ff-pt-mono;
   color: $color-default-white;
-}
 
-.consultation__form {
-  margin-left: 5px;
+  @media (max-width: $tablet-size-max) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    margin-bottom: 34px;
+
+    font-size: 14px;
+    line-height: 134%;
+  }
 }
 
 // .consultation__inputs {
@@ -70,16 +135,41 @@
 .consultation input {
   width: 275px;
   padding: 12px 13px;
+
+  @media (max-width: $tablet-size-max) {
+    width: 320px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    width: 100%;
+  }
 }
 
-.consultation__input:not(:last-child) {
+.consultation__input-name {
   margin-right: 30px;
+
+  @media (max-width: $mobile-size-max) {
+    margin-right: 0;
+  }
 }
 
 .consultation textarea {
   width: 580px;
   margin-bottom: 34px;
   padding: 21px 12px 87px 13px;
+
+  @media (max-width: $tablet-size-max) {
+    width: 100%;
+    margin-bottom: 35px;
+    padding-top: 28px;
+    padding-bottom: 79px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    margin-bottom: 31px;
+    padding-top: 21px;
+    padding-bottom: 111px;
+  }
 }
 
 .consultation input,
@@ -110,8 +200,8 @@
 }
 
 .consultation__button {
-  margin-bottom: 20px;
-  padding: 13px 68px 11px;
+  margin-right: 50px;
+  padding: 13px 68px 10px;
 
   font-weight: 700;
   font-size: 16px;
@@ -125,6 +215,16 @@
   background-color: $black-pearl;
   border-color: transparent;
   border-radius: 3px;
+
+  @media (max-width: $tablet-size-max) {
+    margin-right: 85px;
+    padding-top: 15px;
+    padding-bottom: 8px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    margin-right: 0;
+  }
 
   &:hover,
   &:active {
@@ -140,15 +240,19 @@
 
 .consultation__checkbox {
   display: flex;
+  align-items: center;
+  margin-top: 15px;
 
-  gap: 10px;
+  gap: 11px;
+
+  @media (max-width: $tablet-size-max) {
+    margin-top: 5px;
+  }
 }
 
 .consultation__checkbox label {
-  min-width: 370px;
-
   font-weight: 400;
-  // font-size: 14px;
+  font-size: 14px;
   line-height: 16px;
   font-family: $ff-pt-mono;
   color: $color-default-white;
@@ -157,11 +261,14 @@
 }
 
 .consultation__checkbox input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 15px;
+  margin-bottom: 0;
+  padding: 0;
 
   background-color: transparent;
   border: 1px solid $color-default-white;
+  border-radius: 1px;
   cursor: pointer;
 
   appearance: none;

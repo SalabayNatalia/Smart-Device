@@ -1,5 +1,8 @@
-export const anchor = function () {
-  const smoothLink = document.querySelector('[data-anchor]');
+import {getWindowWidth} from './getWindowWidth';
+
+const smoothLink = document.querySelector('[data-anchor]');
+
+const anchor = function () {
   smoothLink.addEventListener('click', function (evt) {
     evt.preventDefault();
     const id = smoothLink.getAttribute('href');
@@ -10,3 +13,13 @@ export const anchor = function () {
     });
   });
 };
+
+const changeElementText = () => {
+  if (getWindowWidth() <= 770) {
+    smoothLink.textContent = 'Бесплатная консультация';
+  } else {
+    smoothLink.textContent = 'Получить бесплатную консультацию';
+  }
+};
+
+export {anchor, changeElementText};

@@ -1,12 +1,36 @@
-.printed-boards .container {
+.printed-boards {
   padding-top: 306px;
+  padding-bottom: 283px;
+
+  @media (max-width: $tablet-size-max) {
+    padding-top: 180px;
+    padding-bottom: 205px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    padding-top: 149px;
+    padding-bottom: 168px;
+  }
+}
+
+.printed-boards .container {
   padding-right: 400px;
   padding-left: 149px;
+
+  @media (max-width: $tablet-size-max) {
+    padding-right: 100px;
+    padding-left: 50px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
 }
 
 .printed-boards h1 {
   margin-top: 0;
-  margin-bottom: 31px;
+  margin-bottom: 30px;
 
   font-weight: 700;
   font-size: 80px;
@@ -15,21 +39,48 @@
   color: $alice-blue;
   text-transform: uppercase;
   letter-spacing: 0.07em;
+
+  @media (max-width: $tablet-size-max) {
+    margin-bottom: 0;
+
+    font-size: 64px;
+    line-height: 75px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    margin-bottom: 9px;
+
+    font-size: 36px;
+    line-height: 42px;
+  }
 }
 
 .printed-boards p {
   margin-top: 0;
-  margin-bottom: 61px;
+  margin-bottom: 47px;
 
   font-weight: 400;
   font-size: 22px;
   line-height: 34px;
   font-family: $ff-pt-mono;
   color: $alice-blue;
+
+  @media (max-width: $tablet-size-max) {
+    margin-bottom: 57px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    margin-bottom: 44px;
+
+    font-size: 14px;
+    line-height: 155%;
+  }
 }
 
 .printed-boards__button {
-  padding: 15px 27px;
+  display: block;
+  width: 410px;
+  padding: 17px 20px;
 
   font-weight: 700;
   font-size: 18px;
@@ -43,4 +94,18 @@
   background-color: $deep-sky-blue;
   border-color: transparent;
   border-radius: 3px;
+
+  @media (max-width: $tablet-size-max) {
+    margin-left: 45px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    font-size: 14px;
+    line-height: 16px;
+  }
 }

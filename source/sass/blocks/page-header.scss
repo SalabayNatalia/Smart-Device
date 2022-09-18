@@ -5,6 +5,18 @@
   background-image: url("../img/background-header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: $tablet-size-max) {
+    min-height: 640px;
+
+    background-image: url("../img/background-header-tablet.jpg");
+  }
+
+  @media (max-width: $mobile-size-max) {
+    min-height: 560px;
+
+    background-image: url("../img/background-header-mobile.jpg");
+  }
 }
 
 .page-header__wrapper {
@@ -15,20 +27,37 @@
   height: 120px;
   padding-top: 30px;
 
-  background: linear-gradient($black-pearl 70%, $color-transparent);
+  background: linear-gradient($black-pearl 90%, $color-transparent);
+
+  @media (max-width: $tablet-size-max) {
+    height: 100px;
+    padding-top: 20px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    height: 70px;
+    padding-top: 14px;
+  }
 }
 
 .page-header nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 
-  column-gap: 160px;
+  column-gap: 20px;
+  // column-gap: 160px;
+}
+
+.page-header__icon {
+  fill: $deep-sky-blue;
 }
 
 .page-header__button {
   align-self: self-start;
   margin-top: 5px;
-  margin-left: 5px;
+  margin-right: 60px;
+  // margin-left: 5px;
   padding: 9px 17px 13px 17px;
 
   font-weight: 700;

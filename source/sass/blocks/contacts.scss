@@ -1,7 +1,21 @@
 .contacts {
   display: flex;
+  justify-content: space-between;
 
-  column-gap: 122px;
+  column-gap: 20px;
+
+  @media (max-width: $tablet-size-max) {
+    align-self: start;
+    margin-top: 10px;
+    margin-right: 30px;
+
+    column-gap: 40px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    margin-top: 6px;
+    margin-right: 20px;
+  }
 }
 
 .contacts__icon {
@@ -14,7 +28,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
-  font-family: "PTMono", "Inconsolata", monospace;
+  font-family: $ff-pt-mono;
   vertical-align: top;
   color: $alice-blue;
 
