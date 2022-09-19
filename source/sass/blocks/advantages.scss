@@ -11,6 +11,7 @@
 
   @media (max-width: $mobile-size-max) {
     padding-top: 49px;
+    padding-bottom: 12px;
   }
 }
 
@@ -26,8 +27,6 @@
   }
 
   @media (max-width: $mobile-size-max) {
-    // display: flex;
-    // flex-direction: column;
     grid-template-columns: none;
     grid-template-rows: repeat(4, 1fr);
   }
@@ -49,8 +48,7 @@
 
   @media (max-width: $mobile-size-max) {
     min-height: 325px;
-    // margin-bottom: 30px;
-    padding: 30px 24px 75px;
+    padding: 30px 24px 54px;
   }
 
   &:hover,

@@ -6,3 +6,19 @@
     height: 35px;
   }
 }
+
+.logo-image {
+  display: block;
+
+  @media (max-width: $mobile-size-max) {
+    display: none;
+  }
+}
+
+.logo-mobile {
+  display: none;
+
+  @media (max-width: $mobile-size-max) {
+    display: block;
+  }
+}

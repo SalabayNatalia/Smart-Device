@@ -8,6 +8,9 @@
   <meta name="description" content="Описание проекта">
   <title>ProjectName</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="../fonts/PTMono-Regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="../fonts/RobotoCondensed-Regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="../fonts/RobotoCondensed-Bold.woff2" as="font" crossorigin="anonymous">
 </head>
 
 <body class="nojs">
@@ -18,10 +21,12 @@
           <nav>
             <div class="page-header__logo logo">
               <a>
-                <picture>
-                  <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
-                  <img class="logo" src="img/logo-desktop.svg" width="215" height="55" alt="Smart Device">
-                </picture>
+                <svg class="logo-image" width="215" height="55" role="img" aria-label="logo">
+                  <use xlink:href="img/sprite_auto.svg#logo"></use>
+                </svg>
+                <svg class="logo-mobile" width="35" height="35" role="img" aria-label="logo-mobile">
+                  <use xlink:href="img/sprite_auto.svg#logo-mobile"></use>
+                </svg>
               </a>
             </div>
             <ul class="page-header__contacts contacts list-reset">
@@ -46,34 +51,6 @@
               <span>Заказать звонок</span>
             </button>
           </nav>
-          <!-- <nav>
-            <div class="page-header__logo logo">
-              <a>
-                <picture>
-                  <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
-                  <img class="logo" src="img/logo-desktop.svg" width="215" height="55" alt="Smart Device">
-                </picture>
-              </a>
-            </div>
-
-            <a href="mailto:info@sd.ru">
-              <svg class="page-header__icon" width="20" height="20" role="img" aria-label="email">
-                <use xlink:href="img/sprite_auto.svg#email"></use>
-              </svg>
-              <span class="page-header__span">info@sd.ru</span>
-            </a>
-
-            <a href="tel:+74950005252">
-              <svg class="page-header__icon" width="20" height="20" role="img" aria-label="phone">
-                <use xlink:href="img/sprite_auto.svg#phone"></use>
-              </svg>
-              <span class="page-header__span">+7 (495) 000 52 52</span>
-            </a>
-
-            <button class="page-header__button" data-button-open-modal type="button">
-              <span>Заказать звонок</span>
-            </button>
-          </nav> -->
         </div>
       </div>
       <section class="page-header__modal modal">
@@ -88,18 +65,25 @@
                 <label class="visually-hidden" for="your-name">Ваше имя:</label>
                 <input id="your-name" type="text" autofocus placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" data-modal-name required>
                 <label class=" visually-hidden" for="phone">Ваш телефон:</label>
-                <input id="phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" tabindex="2" required>
-                <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос" tabindex="3"></textarea>
+                <input id="phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
+                <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
               </div>
-              <button class="modal__button noselect" type="submit" tabindex="5">Отправить</button>
               <div class="modal__checkbox noselect">
-                <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox" tabindex="4" required>
+                <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox" required>
+                <span></span>
                 <label for="checkbox" class="modal__checkbox-name">
                   Я согласен на обработку&nbsp;&nbsp;персональных данных
                 </label>
+
+                <!-- <label>
+                  <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
+                  <span>
+                    Я согласен на обработку&nbsp;&nbsp;персональных данных</span>
+                </label> -->
               </div>
+              <button class="modal__button noselect" type="submit">Отправить</button>
             </form>
-            <button class="modal__close" data-close-modal type="button" aria-label="Закрыть окно" tabindex="6"></button>
+            <button class="modal__close" data-close-modal type="button" aria-label="Закрыть окно"></button>
           </div>
         </div>
       </section>
@@ -149,7 +133,7 @@
           </ul>
         </div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="container">
           <div class="about__wrapper">
             <div class="about__image">
@@ -174,7 +158,7 @@
           </div>
         </div>
       </section>
-      <section class="catalog">
+      <section class="catalog" id="catalog">
         <div class="container">
           <h2 data-catalog-header>Smart Device предлагает следующие товары и услуги</h2>
           <ul class="catalog__list list-reset">
@@ -196,33 +180,6 @@
           </ul>
         </div>
       </section>
-      <!-- <section class="consultation" id="consultation">
-        <div class="container">
-          <div class="consultation__wrapper">
-            <img src="img/letter.png" width="510" height="285" alt="бумажный самолётик">
-            <div class="consultation__wrapper-form">
-              <h3>Остались вопросы? Задайте их нам!</h3>
-              <p>Мы проконсультируем Вас бесплатно</p>
-              <form class="consultation__form" action="https://echo.htmlacademy.ru" method="get">
-                <div class="consultation__inputs noselect">
-                  <label class="visually-hidden" for="name">Ваше имя:</label>
-                  <input id="name" type="text" placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" required>
-                  <label class=" visually-hidden" for="your-phone">Ваш телефон:</label>
-                  <input id="your-phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
-                  <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
-                </div>
-                <button class="consultation__button" type="submit">Задать вопрос</button>
-                <div class="consultation__checkbox noselect">
-                  <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox-2" required>
-                  <label for="checkbox-2" class="form__checkbox-name">
-                    Я согласен на обработку персональных данных
-                  </label>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section> -->
       <section class="consultation" id="consultation">
         <div class="container">
           <div class="consultation__wrapper">
@@ -230,12 +187,12 @@
               <h3>Остались вопросы? Задайте их нам!</h3>
               <p>Мы проконсультируем Вас бесплатно</p>
               <form class="consultation__form" action="https://echo.htmlacademy.ru" method="get">
-                <div class="consultation__inputs noselect">
-                  <div class="consultation__input-name">
+                <div class="consultation__form-content noselect">
+                  <div class="consultation__input consultation__input--name">
                     <label class="visually-hidden" for="name">Ваше имя:</label>
                     <input id="name" type="text" placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" required>
                   </div>
-                  <div>
+                  <div class="consultation__input">
                     <label class=" visually-hidden" for="your-phone">Ваш телефон:</label>
                     <input id="your-phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
                   </div>
@@ -243,18 +200,11 @@
                   <button class="consultation__button" type="submit">Задать вопрос</button>
                   <div class="consultation__checkbox noselect">
                     <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox-2" required>
-                    <label for="checkbox-2" class="form__checkbox-name">
+                    <label for="checkbox-2">
                       Я согласен на обработку<br>персональных данных
                     </label>
                   </div>
                 </div>
-                <!-- <button class="consultation__button" type="submit">Задать вопрос</button>
-                <div class="consultation__checkbox noselect">
-                  <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox-2" required>
-                  <label for="checkbox-2" class="form__checkbox-name">
-                    Я согласен на обработку персональных данных
-                  </label>
-                </div> -->
               </form>
             </div>
           </div>
@@ -263,29 +213,75 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <ul class="footer__social-list list-reset">
-          <li>
+        <div class="footer__wrapper">
+          <div class="footer__logo-social">
             <a>
-              <svg class="footer__social-icon" width="30" height="30" role="img" aria-label="ok">
-                <use xlink:href="img/sprite_auto.svg#ok"></use>
+              <svg class="footer__logo" width="215" height="55" role="img" aria-label="logo">
+                <use xlink:href="img/sprite_auto.svg#logo"></use>
               </svg>
             </a>
-          </li>
-          <li>
-            <a>
-              <svg class="footer__social-icon" width="30" height="30" role="img" aria-label="vk">
-                <use xlink:href="img/sprite_auto.svg#vk"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a>
-              <svg class="footer__social-icon" width="30" height="30" role="img" aria-label="pinterest">
-                <use xlink:href="img/sprite_auto.svg#pinterest"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
+            <ul class="footer__social-list list-reset">
+              <li>
+                <a>
+                  <svg class="footer__social-icon" width="30" height="30" role="img" aria-label="ok">
+                    <use xlink:href="img/sprite_auto.svg#ok"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <svg class="footer__social-icon" width="30" height="30" role="img" aria-label="vk">
+                    <use xlink:href="img/sprite_auto.svg#vk"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social-item footer__social-item--pinterest">
+                <a>
+                  <svg class="footer__social-icon" width="30" height="30" role="img" aria-label="pinterest">
+                    <use xlink:href="img/sprite_auto.svg#pinterest"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__nav" data-accordion>
+            <h2 class="footer__header" data-accordion-header>Разделы сайта</h2>
+            <ul class="list-reset footer__nav-list" data-accordion-menu>
+              <li>
+                <a href="#about">О Компании</a>
+              </li>
+              <li>
+                <a href="#catalog">Продукты</a>
+              </li>
+              <li>
+                <a href="#">Производство печатных плат</a>
+              </li>
+              <li>
+                <a href="#">Монтаж печатных плат</a>
+              </li>
+              <li>
+                <a href="#">Комплектующие</a>
+              </li>
+              <li>
+                <a href="#">Доставка</a>
+              </li>
+              <li>
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__contacts" data-accordion>
+            <h2 class="footer__header" data-accordion-header>Наш офис</h2>
+            <ul class="list-reset footer__contacts-list" data-accordion-menu>
+              <li>
+                <address>г. Мытищи, Олимпийский проспект, д.10</address>
+              </li>
+              <li><a href="tel:84955894050">+7 (495) 589-40-50</a></li>
+              <li><a href="tel:89253895829">+7 (925) 389-58-29</a></li>
+              <li><a href="tel:89253647813">+7 (925) 364-78-13</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
   </div>

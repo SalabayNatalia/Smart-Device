@@ -17,6 +17,7 @@
 
   @media (max-width: $mobile-size-max) {
     padding-top: 46px;
+    padding-bottom: 88px;
   }
 }
 
@@ -32,17 +33,6 @@
   }
 }
 
-// .consultation__wrapper {
-//   padding-left: 625px;
-// display: grid;
-// column-gap: 30px;
-// grid-template-columns: repeat(2, 1fr);
-
-//   background-image: url(../img/letter.png);
-//   background-repeat: no-repeat;
-//   background-position: 0 82px;
-
-// }
 .consultation__wrapper {
   display: flex;
   width: 100%;
@@ -68,7 +58,7 @@
   }
 }
 
-.consultation__inputs {
+.consultation__form-content {
   display: flex;
   flex-wrap: wrap;
 }
@@ -117,21 +107,6 @@
   }
 }
 
-// .consultation__inputs {
-//   display: grid;
-
-//   column-gap: 30px;
-
-//   grid-template-columns: repeat(2, 1fr);
-//   grid-template-rows: repeat(2, 1fr);
-//   row-gap: 20px;
-// }
-
-// .consultation textarea {
-//   grid-column: 1/-1;
-//   grid-row: 2/-1;
-// }
-
 .consultation input {
   width: 275px;
   padding: 12px 13px;
@@ -145,11 +120,17 @@
   }
 }
 
-.consultation__input-name {
-  margin-right: 30px;
-
+.consultation__input {
   @media (max-width: $mobile-size-max) {
-    margin-right: 0;
+    width: 100%;
+  }
+
+  &--name {
+    margin-right: 30px;
+
+    @media (max-width: $mobile-size-max) {
+      margin-right: 0;
+    }
   }
 }
 
@@ -190,12 +171,16 @@
     box-shadow: 0 0 0 2px $color-neon-blue;
   }
 
+  &:active {
+    opacity: 0.5;
+  }
+
   &::placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
 }
 
-.consultation__inputs input {
+.consultation__form-content input {
   margin-bottom: 20px;
 }
 
@@ -223,11 +208,14 @@
   }
 
   @media (max-width: $mobile-size-max) {
+    width: 100%;
     margin-right: 0;
+    margin-bottom: 25px;
+    padding-top: 13px;
   }
 
   &:hover,
-  &:active {
+  &:focus {
     color: $deep-sky-blue;
 
     background-color: $cerulean;
@@ -247,6 +235,11 @@
 
   @media (max-width: $tablet-size-max) {
     margin-top: 5px;
+  }
+
+  @media (max-width: $mobile-size-max) {
+    margin-top: 0;
+    margin-left: 5px;
   }
 }
 
@@ -274,8 +267,12 @@
   appearance: none;
 
   &:hover,
-  &:active {
+  &:focus {
     border-color: $color-neon-blue;
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }
 

@@ -15,7 +15,7 @@ const anchor = function () {
 };
 
 const changeElementText = () => {
-  if (getWindowWidth() <= 770) {
+  if (getWindowWidth() < 770) {
     smoothLink.textContent = 'Бесплатная консультация';
   } else {
     smoothLink.textContent = 'Получить бесплатную консультацию';

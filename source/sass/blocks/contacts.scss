@@ -1,8 +1,9 @@
 .contacts {
   display: flex;
   justify-content: space-between;
+  margin-left: 11%;
 
-  column-gap: 20px;
+  column-gap: 120px;
 
   @media (max-width: $tablet-size-max) {
     align-self: start;

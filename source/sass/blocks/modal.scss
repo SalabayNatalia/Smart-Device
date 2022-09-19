@@ -48,6 +48,11 @@
   color: $color-default-white;
 }
 
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
 .modal__inputs input,
 .modal__inputs textarea {
   width: 100%;
@@ -115,8 +120,9 @@
 
 .modal__checkbox {
   display: flex;
+  order: 2;
 
-  gap: 10px;
+  gap: 5px;
 }
 
 .modal__checkbox label {

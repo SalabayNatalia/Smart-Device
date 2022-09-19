@@ -29,7 +29,7 @@ export const createModal = function () {
   };
 
   const modalShow = () => {
-    modalName.setAttribute('tabindex', '1');
+    modalName.setAttribute('tabindex', '0');
     modalName.focus();
   };
 
