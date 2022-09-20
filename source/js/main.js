@@ -1,10 +1,12 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {createModal} from './modules/modal';
-import {anchor, changeElementText} from './modules/anchor';
-import {openText, aboutMobileText} from './modules/collapsible';
-import {changeCatalogHeader} from './modules/catalogHeader';
+import {anchor} from './modules/anchor';
+import {openText} from './modules/collapsible';
 import {openAccordion} from './modules/accordion';
 
+const body = document.querySelector('body');
+
+body.classList.remove('nojs');
 
 window.addEventListener('DOMContentLoaded', () => {
   iosVhFix();
@@ -12,9 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
     createModal();
     anchor();
     openText();
-    changeElementText();
-    aboutMobileText();
-    changeCatalogHeader();
     openAccordion();
   });
 });

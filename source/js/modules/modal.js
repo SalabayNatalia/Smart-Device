@@ -7,9 +7,6 @@ export const createModal = function () {
   const modalName = document.querySelector('[data-modal-name');
   const modal = document.querySelector('[data-modal');
 
-
-  body.classList.remove('nojs');
-
   const onModalEscKeydown = (evt) => {
     if (evt.keyCode === 27) {
       evt.preventDefault();

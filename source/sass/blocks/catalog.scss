@@ -15,7 +15,7 @@
   }
 }
 
-.catalog h2 {
+.catalog__header {
   margin-top: 0;
   margin-bottom: 50px;
 
@@ -24,6 +24,14 @@
   line-height: 51px;
   font-family: $ff-roboto-condensed;
   color: $color-default-white;
+
+  &--first {
+    display: block;
+  }
+
+  &--second {
+    display: none;
+  }
 
   @media (max-width: $tablet-size-max) {
     margin-bottom: 37px;
@@ -35,13 +43,21 @@
 
     font-size: 28px;
     line-height: 140%;
+
+    &--first {
+      display: none;
+    }
+
+    &--second {
+      display: block;
+    }
   }
 }
 
 .catalog__list {
   display: grid;
 
-  gap: 85px;
+  gap: 86px;
   grid-template-columns: repeat(3, 1fr);
 
   @media (max-width: $tablet-size-max) {
@@ -107,63 +123,160 @@
   }
 
   &--product1 {
-    background-image: url("../img/product1.jpg");
+    @media (min-width: $desktop-size-min) {
+      background-image: url("../img/product1.jpg");
+
+      @supports (background-image: url("../img/product1.webp")) {
+        background-image: url("../img/product1.webp");
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/product1@2x.jpg");
+
+        @supports (background-image: url("../img/product1@2x.webp")) {
+          background-image: url("../img/product1@2x.webp");
+        }
+      }
+    }
 
     @media (max-width: $tablet-size-max) {
       background-image: url("../img/product1-tablet.jpg");
+
+      @supports (background-image: url("../img/product1-tablet.webp")) {
+        background-image: url("../img/product1-tablet.webp");
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/product1-tablet@2x.jpg");
+
+        @supports (background-image: url("../img/product1-tablet@2x.webp")) {
+          background-image: url("../img/product1-tablet@2x.webp");
+        }
+      }
     }
 
     @media (max-width: $mobile-size-max) {
       background-image: url("../img/product1-mobile.jpg");
+
+      @supports (background-image: url("../img/product1-mobile.webp")) {
+        background-image: url("../img/product1-mobile.webp");
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/product1-mobile@2x.jpg");
+
+        @supports (background-image: url("../img/product1-mobile@2x.webp")) {
+          background-image: url("../img/product1-mobile@2x.webp");
+        }
+      }
     }
   }
 
   &--product2 {
-    background-image: url("../img/product2.jpg");
+    @media (min-width: $desktop-size-min) {
+      background-image: url("../img/product2.jpg");
+
+      @supports (background-image: url("../img/product2.webp")) {
+        background-image: url("../img/product2.webp");
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/product2@2x.jpg");
+
+        @supports (background-image: url("../img/product2@2x.webp")) {
+          background-image: url("../img/product2@2x.webp");
+        }
+      }
+    }
 
     @media (max-width: $tablet-size-max) {
       background-image: url("../img/product2-tablet.jpg");
+
+      @supports (background-image: url("../img/product2-tablet.webp")) {
+        background-image: url("../img/product2-tablet.webp");
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/product2-tablet@2x.jpg");
+
+        @supports (background-image: url("../img/product2-tablet@2x.webp")) {
+          background-image: url("../img/product2-tablet@2x.webp");
+        }
+      }
     }
 
     @media (max-width: $mobile-size-max) {
       background-image: url("../img/product2-mobile.jpg");
+
+      @supports (background-image: url("../img/product2-mobile.webp")) {
+        background-image: url("../img/product2-mobile.webp");
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/product2-mobile@2x.jpg");
+
+        @supports (background-image: url("../img/product2-mobile@2x.webp")) {
+          background-image: url("../img/product2-mobile@2x.webp");
+        }
+      }
     }
   }
 
   &--product3 {
-    background-image: url("../img/product3.jpg");
+    @media (min-width: $desktop-size-min) {
+      background-image: url("../img/product3.jpg");
+
+      @supports (background-image: url("../img/product3.webp")) {
+        background-image: url("../img/product3.webp");
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/product3@2x.jpg");
+
+        @supports (background-image: url("../img/product3@2x.webp")) {
+          background-image: url("../img/product3@2x.webp");
+        }
+      }
+    }
 
     @media (max-width: $tablet-size-max) {
       background-image: url("../img/product3-tablet.jpg");
+
+      @supports (background-image: url("../img/product3-tablet.webp")) {
+        background-image: url("../img/product3-tablet.webp");
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/product3-tablet@2x.jpg");
+
+        @supports (background-image: url("../img/product3-tablet@2x.webp")) {
+          background-image: url("../img/product3-tablet@2x.webp");
+        }
+      }
     }
 
     @media (max-width: $mobile-size-max) {
       background-image: url("../img/product3-mobile.jpg");
+
+      @supports (background-image: url("../img/product3-mobile.webp")) {
+        background-image: url("../img/product3-mobile.webp");
+      }
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/product3-mobile@2x.jpg");
+
+        @supports (background-image: url("../img/product3-mobile@2x.webp")) {
+          background-image: url("../img/product3-mobile@2x.webp");
+        }
+      }
     }
   }
 }
 
-//   @media (max-width: $tablet-size-max) {
-//     .catalog__link {
-//       &--product1 {
-//         background-image: url("../img/product1-tablet.jpg");
-//       }
-
-//       &--product2 {
-//         background-image: url("../img/product2-tablet.jpg");
-//       }
-
-//       &--product3 {
-//         background-image: url("../img/product3-tablet.jpg");
-//       }
-//     }
-//   }
-// }
-
 .catalog__item h3 {
   margin-top: 0;
   margin-bottom: 0;
-  padding-right: 100px;
+  padding-right: 30%;
 
   font-weight: 400;
   font-size: 20px;

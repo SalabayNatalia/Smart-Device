@@ -43,6 +43,10 @@
   background-position-y: 82px;
   background-size: 511px auto;
 
+  @media (max-width: 1150px) {
+    background-size: 377px auto;
+  }
+
   @media (max-width: $tablet-size-max) {
     background-image: none;
   }
@@ -64,15 +68,11 @@
 }
 
 .consultation h3 {
-  margin-top: 0;
   margin-bottom: 12px;
   margin-left: -5px;
 
-  font-weight: 400;
   font-size: 36px;
   line-height: 51px;
-  font-family: $ff-roboto-condensed;
-  color: $color-default-white;
 
   @media (max-width: $tablet-size-max) {
     margin-bottom: 8px;
@@ -86,14 +86,7 @@
 }
 
 .consultation p {
-  margin-top: 0;
   margin-bottom: 35px;
-
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  font-family: $ff-pt-mono;
-  color: $color-default-white;
 
   @media (max-width: $tablet-size-max) {
     margin-bottom: 24px;
@@ -107,26 +100,28 @@
   }
 }
 
-.consultation input {
-  width: 275px;
+.consultation__input input {
+  width: 100%;
   padding: 12px 13px;
-
-  @media (max-width: $tablet-size-max) {
-    width: 320px;
-  }
-
-  @media (max-width: $mobile-size-max) {
-    width: 100%;
-  }
 }
 
 .consultation__input {
+  width: 47%;
+
+  @media (max-width: $tablet-size-max) {
+    width: 48%;
+  }
+
   @media (max-width: $mobile-size-max) {
     width: 100%;
   }
 
   &--name {
-    margin-right: 30px;
+    margin-right: 5%;
+
+    @media (max-width: $tablet-size-max) {
+      margin-right: 4%;
+    }
 
     @media (max-width: $mobile-size-max) {
       margin-right: 0;
@@ -153,33 +148,6 @@
   }
 }
 
-.consultation input,
-.consultation textarea {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  font-family: $ff-pt-mono;
-  color: rgba(255, 255, 255, 1);
-
-  background-color: $pacific-blue;
-  border: 2px solid transparent;
-  border-radius: 3px;
-  cursor: text;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 0 2px $color-neon-blue;
-  }
-
-  &:active {
-    opacity: 0.5;
-  }
-
-  &::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-  }
-}
-
 .consultation__form-content input {
   margin-bottom: 20px;
 }
@@ -187,19 +155,6 @@
 .consultation__button {
   margin-right: 50px;
   padding: 13px 68px 10px;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-  font-family: $ff-roboto-condensed;
-  text-align: center;
-  color: $color-default-white;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-
-  background-color: $black-pearl;
-  border-color: transparent;
-  border-radius: 3px;
 
   @media (max-width: $tablet-size-max) {
     margin-right: 85px;
@@ -212,17 +167,6 @@
     margin-right: 0;
     margin-bottom: 25px;
     padding-top: 13px;
-  }
-
-  &:hover,
-  &:focus {
-    color: $deep-sky-blue;
-
-    background-color: $cerulean;
-  }
-
-  &:active {
-    opacity: 0.5;
   }
 }
 
@@ -244,64 +188,18 @@
 }
 
 .consultation__checkbox label {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  font-family: $ff-pt-mono;
-  color: $color-default-white;
-
-  opacity: 0.8;
+  padding-left: 25px;
 }
 
-.consultation__checkbox input[type="checkbox"] {
+.consultation__checkbox span {
   width: 14px;
   height: 15px;
+  margin-top: 6px;
   margin-bottom: 0;
   padding: 0;
-
-  background-color: transparent;
-  border: 1px solid $color-default-white;
-  border-radius: 1px;
-  cursor: pointer;
-
-  appearance: none;
-
-  &:hover,
-  &:focus {
-    border-color: $color-neon-blue;
-  }
-
-  &:active {
-    opacity: 0.5;
-  }
-}
-
-.consultation__checkbox input[type="checkbox"]:checked {
-  background-image: url("../img/check.svg");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .consultation__close {
-  position: absolute;
   top: 19px;
   right: 15px;
-  z-index: 10;
-
-  display: block;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-
-  background-color: transparent;
-  background-image: url("../img/close.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    opacity: 0.5;
-  }
 }

@@ -22,3 +22,16 @@
     display: block;
   }
 }
+
+.logo-modal {
+  width: 215px;
+  margin: 0 auto;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.logo-modal a {
+  display: block;
+}

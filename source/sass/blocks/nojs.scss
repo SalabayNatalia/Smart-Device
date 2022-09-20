@@ -1,0 +1,41 @@
+.nojs .footer__nav-list,
+.nojs .footer__contacts-list {
+  @media (max-width: $mobile-size-max) {
+    display: block;
+  }
+}
+
+.nojs .footer__header::after,
+.nojs .footer__header::before {
+  @media (max-width: $mobile-size-max) {
+    display: none;
+  }
+}
+
+.nojs .about__collapsible {
+  display: block;
+}
+
+.nojs .about__button {
+  display: none;
+}
+
+.nojs .modal {
+  display: none;
+}
+
+.nojs .modal-nojs {
+  display: block;
+}
+
+.nojs .page-header__button--nojs {
+  display: block;
+
+  @media (max-width: $tablet-size-max) {
+    display: none;
+  }
+}
+
+.nojs .page-header__button--js {
+  display: none;
+}

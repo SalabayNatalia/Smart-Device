@@ -1,5 +1,3 @@
-import {getWindowWidth} from './getWindowWidth';
-
 const smoothLink = document.querySelector('[data-anchor]');
 
 const anchor = function () {
@@ -14,12 +12,4 @@ const anchor = function () {
   });
 };
 
-const changeElementText = () => {
-  if (getWindowWidth() < 770) {
-    smoothLink.textContent = 'Бесплатная консультация';
-  } else {
-    smoothLink.textContent = 'Получить бесплатную консультацию';
-  }
-};
-
-export {anchor, changeElementText};
+export {anchor};

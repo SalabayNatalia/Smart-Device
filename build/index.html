@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Описание проекта">
-  <title>ProjectName</title>
+  <title>Smart-Device</title>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preload" href="../fonts/PTMono-Regular.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="../fonts/RobotoCondensed-Regular.woff2" as="font" crossorigin="anonymous">
@@ -35,7 +35,7 @@
                   <svg class="contacts__icon" width="20" height="20" role="img" aria-label="email">
                     <use xlink:href="img/sprite_auto.svg#email"></use>
                   </svg>
-                  <span>info@sd.ru</span>
+                  <span class="contacts__text">info@sd.ru</span>
                 </a>
               </li>
               <li>
@@ -43,17 +43,20 @@
                   <svg class="contacts__icon" width="20" height="20" role="img" aria-label="phone">
                     <use xlink:href="img/sprite_auto.svg#phone"></use>
                   </svg>
-                  <span>+7 (495) 000 52 52</span>
+                  <span class="contacts__text">+7 (495) 000 52 52</span>
                 </a>
               </li>
             </ul>
-            <button class="page-header__button" data-button-open-modal type="button">
+            <button class="page-header__button page-header__button--js" data-button-open-modal type="button">
               <span>Заказать звонок</span>
             </button>
+            <a href="modal.html" class="page-header__button page-header__button--nojs">
+              <span>Заказать звонок</span>
+            </a>
           </nav>
         </div>
       </div>
-      <section class="page-header__modal modal">
+      <section class="page-header__modal modal form">
         <div class="modal__overlay" data-overlay>
           <div class="modal__wrapper" data-modal>
             <h3>Закажите звонок</h3>
@@ -61,27 +64,21 @@
               Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время
             </p>
             <form class="modal__form" action="https://echo.htmlacademy.ru" method="get" autocomplete="off">
-              <div class="modal__inputs noselect">
+              <div class="modal__inputs form__input noselect">
                 <label class="visually-hidden" for="your-name">Ваше имя:</label>
                 <input id="your-name" type="text" autofocus placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" data-modal-name required>
                 <label class=" visually-hidden" for="phone">Ваш телефон:</label>
                 <input id="phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
                 <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
               </div>
-              <div class="modal__checkbox noselect">
-                <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox" required>
-                <span></span>
-                <label for="checkbox" class="modal__checkbox-name">
+              <div class="modal__checkbox form__checkbox noselect">
+                <label>
+                  <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
+                  <span></span>
                   Я согласен на обработку&nbsp;&nbsp;персональных данных
                 </label>
-
-                <!-- <label>
-                  <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
-                  <span>
-                    Я согласен на обработку&nbsp;&nbsp;персональных данных</span>
-                </label> -->
               </div>
-              <button class="modal__button noselect" type="submit">Отправить</button>
+              <button class="modal__button form__button noselect" type="submit">Отправить</button>
             </form>
             <button class="modal__close" data-close-modal type="button" aria-label="Закрыть окно"></button>
           </div>
@@ -91,7 +88,8 @@
         <div class="container">
           <h1>Печатные платы</h1>
           <p>производство и монтаж, поставка комплектующих, блоков&nbsp;и модулей</p>
-          <a class="printed-boards__button" data-anchor href="#consultation">Получить бесплатную консультацию</a>
+          <a class="printed-boards__button printed-boards__button--first" data-anchor href="#consultation">Получить бесплатную консультацию</a>
+          <a class="printed-boards__button printed-boards__button--second" data-anchor href="#consultation">Бесплатная консультация</a>
         </div>
       </section>
     </header>
@@ -142,12 +140,13 @@
                 <!--desktop 1x: 150px; 2x: 300px -->
                 <img loading="lazy" src="img/2022.png" srcset="img/2022@2x.png 2x" width="150" height="320" alt="2022">
               </picture>
+
             </div>
             <div class="about__content">
               <h2>О компании</h2>
               <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
               </p>
-              <p data-about-mobile>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
+              <p data-about-mobile>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. <span>Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span>
               </p>
               <a class="about__button" href="#" data-collapsible>Подробнее</a>
               <div class="about__collapsible">
@@ -160,7 +159,8 @@
       </section>
       <section class="catalog" id="catalog">
         <div class="container">
-          <h2 data-catalog-header>Smart Device предлагает следующие товары и услуги</h2>
+          <h2 class="catalog__header catalog__header--first">Smart Device предлагает следующие товары и услуги</h2>
+          <h2 class="catalog__header catalog__header--second">Товары и услуги Smart Device</h2>
           <ul class="catalog__list list-reset">
             <li class="catalog__item">
               <a class="catalog__link catalog__link--product1" href="#">
@@ -180,7 +180,7 @@
           </ul>
         </div>
       </section>
-      <section class="consultation" id="consultation">
+      <section class="consultation form" id="consultation">
         <div class="container">
           <div class="consultation__wrapper">
             <div class="consultation__wrapper-form">
@@ -188,19 +188,20 @@
               <p>Мы проконсультируем Вас бесплатно</p>
               <form class="consultation__form" action="https://echo.htmlacademy.ru" method="get">
                 <div class="consultation__form-content noselect">
-                  <div class="consultation__input consultation__input--name">
+                  <div class="consultation__input consultation__input--name form__input">
                     <label class="visually-hidden" for="name">Ваше имя:</label>
                     <input id="name" type="text" placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" required>
                   </div>
-                  <div class="consultation__input">
+                  <div class="consultation__input form__input">
                     <label class=" visually-hidden" for="your-phone">Ваш телефон:</label>
                     <input id="your-phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
                   </div>
                   <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
-                  <button class="consultation__button" type="submit">Задать вопрос</button>
-                  <div class="consultation__checkbox noselect">
-                    <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." id="checkbox-2" required>
-                    <label for="checkbox-2">
+                  <button class="consultation__button form__button" type="submit">Задать вопрос</button>
+                  <div class="consultation__checkbox form__checkbox noselect">
+                    <label>
+                      <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
+                      <span></span>
                       Я согласен на обработку<br>персональных данных
                     </label>
                   </div>

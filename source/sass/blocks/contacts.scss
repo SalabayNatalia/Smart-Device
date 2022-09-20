@@ -1,9 +1,14 @@
 .contacts {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-left: 11%;
 
   column-gap: 120px;
+
+  @media (max-width: 1150px) {
+    column-gap: 40px;
+  }
 
   @media (max-width: $tablet-size-max) {
     align-self: start;
@@ -17,6 +22,17 @@
     margin-top: 6px;
     margin-right: 20px;
   }
+}
+
+.contacts li:hover .contacts__icon,
+.contacts li:hover .contacts__text {
+  color: $java;
+
+  fill: $java;
+}
+
+.footer__social-list li:active .footer__social-icon {
+  opacity: 0.5;
 }
 
 .contacts__icon {
