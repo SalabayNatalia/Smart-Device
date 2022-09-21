@@ -1,0 +1,12 @@
+.logo-modal {
+  width: 215px;
+  margin: 0 auto;
+}
+
+.logo-modal a {
+  display: block;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

@@ -3,6 +3,7 @@ import {createModal} from './modules/modal';
 import {anchor} from './modules/anchor';
 import {openText} from './modules/collapsible';
 import {openAccordion} from './modules/accordion';
+import {getMask} from './modules/mask';
 
 const body = document.querySelector('body');
 
@@ -15,5 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
     anchor();
     openText();
     openAccordion();
+    getMask();
   });
 });

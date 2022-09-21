@@ -56,18 +56,18 @@
     background-color: $deep-sky-blue;
     cursor: pointer;
   }
+}
 
-  &:hover h3,
-  &:focus h3,
-  &:hover p,
-  &:focus p {
-    color: $alice-blue;
-  }
+.advantages__item:hover h3,
+.advantages__item:focus h3,
+.advantages__item:hover p,
+.advantages__item:focus p {
+  color: $alice-blue;
+}
 
-  &:hover svg,
-  &:focus svg {
-    fill: $alice-blue;
-  }
+.advantages__item:hover svg,
+.advantages__item:focus svg {
+  fill: $alice-blue;
 }
 
 .advantages__item svg {

@@ -16,7 +16,7 @@
   color: $color-default-white;
 }
 
-.form__input input,
+.form input,
 .form textarea {
   font-weight: 400;
   font-size: 16px;
@@ -31,6 +31,7 @@
 
   &:hover,
   &:focus {
+    background-color: $picton-blue;
     box-shadow: 0 0 0 2px $color-neon-blue;
   }
 
@@ -69,7 +70,7 @@
   }
 }
 
-.form__checkbox label {
+.form__checkbox {
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
@@ -102,11 +103,25 @@
 .form__checkbox input {
   position: absolute;
 
-  appearance: none;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
 }
 
-.form__checkbox-input:checked + .form__checkbox-span {
+.form__checkbox input[type="checkbox"]:checked ~ span {
   background-image: url("../img/check.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.form__checkbox input[type="checkbox"]:hover ~ span,
+.form__checkbox input[type="checkbox"]:focus ~ span {
+  background-color: $picton-blue;
+  box-shadow: 0 0 0 2px $color-neon-blue;
 }

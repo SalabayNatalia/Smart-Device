@@ -31,38 +31,46 @@ export const createModal = function () {
   };
 
   const focusRestrict = () => {
-    document.addEventListener('focus', (evt) => {
-      if (onModalOpened && !modal.contains(evt.target)) {
-        evt.stopPropagation();
-        modalName.focus();
-      }
-    }, true);
+    if (focusRestrict) {
+      document.addEventListener('focus', (evt) => {
+        if (onModalOpened && !modal.contains(evt.target)) {
+          evt.stopPropagation();
+          modalName.focus();
+        }
+      }, true);
+    }
   };
 
-  openBtn.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    onModalOpened();
-    document.addEventListener('keydown', onModalEscKeydown);
-    modalShow();
-    focusRestrict();
-  });
+  if (openBtn) {
+    openBtn.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      onModalOpened();
+      document.addEventListener('keydown', onModalEscKeydown);
+      modalShow();
+      focusRestrict();
+    });
+  }
 
-  closeBtn.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    if (header.classList.contains('is-open')) {
-      onModalClosed();
-      document.removeEventListener('keydown', onModalEscKeydown);
-    }
-  });
-
-  overlay.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    let target = evt.target;
-    if (target === overlay) {
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (evt) => {
+      evt.preventDefault();
       if (header.classList.contains('is-open')) {
         onModalClosed();
         document.removeEventListener('keydown', onModalEscKeydown);
       }
-    }
-  });
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      let target = evt.target;
+      if (target === overlay) {
+        if (header.classList.contains('is-open')) {
+          onModalClosed();
+          document.removeEventListener('keydown', onModalEscKeydown);
+        }
+      }
+    });
+  }
 };

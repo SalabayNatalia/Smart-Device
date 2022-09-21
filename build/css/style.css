@@ -762,11 +762,8 @@ button,
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
   order: 2;
-  gap: 5px;
-}
-
-.modal__checkbox label {
   padding-left: 35px;
+  gap: 5px;
 }
 
 .modal__checkbox span {
@@ -895,14 +892,14 @@ button,
   column-gap: 120px;
 }
 
-.contacts li:hover .contacts__icon,
-.contacts li:hover .contacts__text {
+.contacts a:hover .contacts__icon,
+.contacts a:hover .contacts__text {
   color: #339a9a;
   fill: #339a9a;
 }
 
-.footer__social-list li:active .footer__social-icon {
-  opacity: 0.5;
+.contacts a {
+  display: block;
 }
 
 .contacts__icon {
@@ -921,27 +918,6 @@ button,
 
 .logo {
   margin-right: 9px;
-}
-
-.logo-image {
-  display: block;
-}
-
-.logo-mobile {
-  display: none;
-}
-
-.logo-modal {
-  width: 215px;
-  margin: 0 auto;
-}
-
-.logo-modal:hover {
-  opacity: 0.5;
-}
-
-.logo-modal a {
-  display: block;
 }
 
 .printed-boards {
@@ -1320,18 +1296,17 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
   margin-top: 15px;
-  gap: 11px;
-}
-
-.consultation__checkbox label {
   padding-left: 25px;
+  gap: 11px;
 }
 
 .consultation__checkbox span {
   width: 14px;
   height: 15px;
-  margin-top: 6px;
   margin-bottom: 0;
   padding: 0;
 }
@@ -1368,13 +1343,17 @@ button,
   grid-template-columns: repeat(3, auto);
 }
 
-.footer__social-list li:hover .footer__social-icon,
-.footer__social-list li:focus .footer__social-icon {
+.footer__social-list a:hover .footer__social-icon,
+.footer__social-list a:focus .footer__social-icon {
   stroke: #339a9a;
 }
 
-.footer__social-list li:active .footer__social-icon {
+.footer__social-list a:active .footer__social-icon {
   opacity: 0.5;
+}
+
+.footer__social a {
+  display: block;
 }
 
 .footer__header {
@@ -1404,7 +1383,6 @@ button,
   flex-direction: column;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  max-height: 150px;
   max-height: 55%;
   margin-right: 20px;
   padding-right: 75px;
@@ -1448,15 +1426,6 @@ button,
   opacity: 0.7;
 }
 
-.footer__contacts address:hover,
-.footer__contacts address:focus {
-  color: #339a9a;
-}
-
-.footer__contacts address:active {
-  opacity: 0.5;
-}
-
 .footer__contacts li {
   margin-bottom: 6px;
 }
@@ -1480,6 +1449,10 @@ button,
   opacity: 0.5;
 }
 
+.footer__accordion.is-open .footer__accordion-list {
+  display: none;
+}
+
 .nojs .about__collapsible {
   display: block;
 }
@@ -1492,7 +1465,7 @@ button,
   display: none;
 }
 
-.nojs .modal__nojs {
+.nojs .modal-nojs {
   display: block;
 }
 
@@ -1501,6 +1474,10 @@ button,
 }
 
 .nojs .page-header__button--js {
+  display: none;
+}
+
+.nojs .modal__close--nojs {
   display: none;
 }
 
@@ -1520,7 +1497,7 @@ button,
   color: #ffffff;
 }
 
-.form__input input,
+.form input,
 .form textarea {
   font-weight: 400;
   font-size: 16px;
@@ -1533,40 +1510,41 @@ button,
   cursor: text;
 }
 
-.form__input input:hover,
-.form__input input:focus,
+.form input:hover,
+.form input:focus,
 .form textarea:hover,
 .form textarea:focus {
+  background-color: #72a0ca;
   -webkit-box-shadow: 0 0 0 2px #2c39f2;
   box-shadow: 0 0 0 2px #2c39f2;
 }
 
-.form__input input:active,
+.form input:active,
 .form textarea:active {
   opacity: 0.5;
 }
 
-.form__input input::-webkit-input-placeholder,
+.form input::-webkit-input-placeholder,
 .form textarea::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.form__input input::-moz-placeholder,
+.form input::-moz-placeholder,
 .form textarea::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.form__input input:-ms-input-placeholder,
+.form input:-ms-input-placeholder,
 .form textarea:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.form__input input::-ms-input-placeholder,
+.form input::-ms-input-placeholder,
 .form textarea::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.form__input input::placeholder,
+.form input::placeholder,
 .form textarea::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -1595,7 +1573,7 @@ button,
   opacity: 0.5;
 }
 
-.form__checkbox label {
+.form__checkbox {
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
@@ -1624,15 +1602,39 @@ button,
 
 .form__checkbox input {
   position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
-.form__checkbox-input:checked + .form__checkbox-span {
+.form__checkbox input[type="checkbox"]:checked ~ span {
   background-image: url("../img/check.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.form__checkbox input[type="checkbox"]:hover ~ span,
+.form__checkbox input[type="checkbox"]:focus ~ span {
+  background-color: #72a0ca;
+  -webkit-box-shadow: 0 0 0 2px #2c39f2;
+  box-shadow: 0 0 0 2px #2c39f2;
+}
+
+.logo-modal {
+  width: 215px;
+  margin: 0 auto;
+}
+
+.logo-modal a {
+  display: block;
+}
+
+.logo-modal a:hover {
+  opacity: 0.5;
 }
 
 /* @media (hover: hover), screen and (min-width: 0\0) {
@@ -1689,6 +1691,16 @@ button,
       background-image: url("../img/product3.webp");
     }
 }
+
+  .consultation__wrapper {
+    background-image: url("../img/letter.png");
+  }
+
+@supports (background-image: url("../img/letter.webp")) {
+    .consultation__wrapper {
+      background-image: url("../img/letter.webp");
+    }
+}
 }
 
 @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1024px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 1024px) and (min-resolution: 144dpi), (min-width: 1024px) and (min-resolution: 1.5dppx) {
@@ -1729,6 +1741,16 @@ button,
 @supports (background-image: url("../img/product3@2x.webp")) {
     .catalog__link--product3 {
       background-image: url("../img/product3@2x.webp");
+    }
+}
+
+  .consultation__wrapper {
+    background-image: url("../img/letter@2x.png");
+  }
+
+@supports (background-image: url("../img/letter@2x.webp")) {
+    .consultation__wrapper {
+      background-image: url("../img/letter@2x.webp");
     }
 }
 }
@@ -2109,14 +2131,6 @@ button,
   .logo {
     width: 35px;
     height: 35px;
-  }
-
-  .logo-image {
-    display: none;
-  }
-
-  .logo-mobile {
-    display: block;
   }
 
   .printed-boards {

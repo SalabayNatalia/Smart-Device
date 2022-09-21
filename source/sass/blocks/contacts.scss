@@ -24,15 +24,15 @@
   }
 }
 
-.contacts li:hover .contacts__icon,
-.contacts li:hover .contacts__text {
+.contacts a:hover .contacts__icon,
+.contacts a:hover .contacts__text {
   color: $java;
 
   fill: $java;
 }
 
-.footer__social-list li:active .footer__social-icon {
-  opacity: 0.5;
+.contacts a {
+  display: block;
 }
 
 .contacts__icon {

@@ -70,12 +70,9 @@
 .modal__checkbox {
   display: flex;
   order: 2;
+  padding-left: 35px;
 
   gap: 5px;
-}
-
-.modal__checkbox label {
-  padding-left: 35px;
 }
 
 .modal__checkbox span {

@@ -39,3 +39,7 @@
 .nojs .page-header__button--js {
   display: none;
 }
+
+.nojs .modal__close--nojs {
+  display: none;
+}

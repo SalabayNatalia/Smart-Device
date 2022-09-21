@@ -43,6 +43,22 @@
   background-position-y: 82px;
   background-size: 511px auto;
 
+  @media (min-width: $desktop-size-min) {
+    background-image: url("../img/letter.png");
+
+    @supports (background-image: url("../img/letter.webp")) {
+      background-image: url("../img/letter.webp");
+    }
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/letter@2x.png");
+
+      @supports (background-image: url("../img/letter@2x.webp")) {
+        background-image: url("../img/letter@2x.webp");
+      }
+    }
+  }
+
   @media (max-width: 1150px) {
     background-size: 377px auto;
   }
@@ -173,7 +189,9 @@
 .consultation__checkbox {
   display: flex;
   align-items: center;
+  order: 2;
   margin-top: 15px;
+  padding-left: 25px;
 
   gap: 11px;
 
@@ -187,14 +205,9 @@
   }
 }
 
-.consultation__checkbox label {
-  padding-left: 25px;
-}
-
 .consultation__checkbox span {
   width: 14px;
   height: 15px;
-  margin-top: 6px;
   margin-bottom: 0;
   padding: 0;
 }
