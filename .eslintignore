@@ -1,4 +1,5 @@
-build/*.js
-source/js/vendor/*.js
+build/_.js
+source/js/vendor/_.js
 gulpfile.js
 webpack.config.js
+source/js/modules/mask.js
