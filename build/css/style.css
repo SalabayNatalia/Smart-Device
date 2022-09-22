@@ -821,9 +821,7 @@ button,
 
 .modal__content {
   position: relative;
-  top: -217px;
   width: 500px;
-  margin: 146px auto;
   padding-top: 36px;
   padding-right: 37px;
   padding-bottom: 43px;
@@ -978,6 +976,10 @@ button,
 
 .page-header__button--nojs {
   display: none;
+}
+
+.page-header__button--js {
+  display: block;
 }
 
 .contacts {
@@ -1413,8 +1415,8 @@ button,
 
 .consultation__checkbox span {
   width: 14px;
-  height: 15px;
-  margin-bottom: 0;
+  height: 14px;
+  margin-bottom: 2px;
   padding: 0;
 }
 
@@ -1432,13 +1434,13 @@ button,
 .footer__wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 250px 1fr 345px;
-  grid-template-columns: 250px 1fr 345px;
+  -ms-grid-columns: 250px 1fr;
+  grid-template-columns: 250px 1fr;
 }
 
 .footer__logo {
   display: block;
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
 .footer__social-list {
@@ -1465,7 +1467,7 @@ button,
 
 .footer__header {
   margin-top: 0;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
   font-weight: 400;
   font-size: 15px;
   line-height: 107%;
@@ -1554,14 +1556,25 @@ button,
   opacity: 0.5;
 }
 
-.footer__accordion.is-open .footer__accordion-list {
-  display: none;
-}
-
 .footer__lists {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.footer__accordion-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 345px;
+  grid-template-columns: 1fr 345px;
+  -ms-grid-rows: (-webkit-min-content)[2];
+  -ms-grid-rows: (min-content)[2];
+  grid-template-rows: repeat(2, -webkit-min-content);
+  grid-template-rows: repeat(2, min-content);
+}
+
+.footer__accordion.is-open .footer__lists {
+  display: block;
 }
 
 .nojs .about__collapsible {
@@ -1573,10 +1586,6 @@ button,
 }
 
 .nojs .modal-nojs {
-  display: block;
-}
-
-.page-header__button--js {
   display: block;
 }
 
@@ -1872,8 +1881,8 @@ button,
   }
 
   .footer__wrapper {
-    -ms-grid-columns: 200px 1fr 300px;
-    grid-template-columns: 200px 1fr 300px;
+    -ms-grid-columns: 200px 1fr;
+    grid-template-columns: 200px 1fr;
   }
 }
 
@@ -1903,6 +1912,10 @@ button,
   }
 
   .page-header__button {
+    display: none;
+  }
+
+  .page-header__button--js {
     display: none;
   }
 
@@ -2142,13 +2155,9 @@ button,
     margin-left: 0;
   }
 
-  .footer__nav-list {
-    max-height: none;
-  }
-
   .footer__contacts {
     margin-top: 0;
-    margin-left: 15px;
+    margin-left: 25px;
   }
 
   .footer__lists {
@@ -2158,8 +2167,8 @@ button,
     flex-direction: column;
   }
 
-  .page-header__button--js {
-    display: none;
+  .footer__accordion-container {
+    grid-column: 1/-1;
   }
 }
 
@@ -2474,6 +2483,10 @@ button,
 
   .footer__wrapper {
     display: block;
+    -ms-grid-columns: none;
+    grid-template-columns: none;
+    -ms-grid-rows: none;
+    grid-template-rows: none;
   }
 
   .footer__logo-social {
@@ -2482,6 +2495,8 @@ button,
   }
 
   .footer__logo {
+    width: 219px;
+    height: 55px;
     margin: 0 auto 20px;
   }
 
@@ -2504,11 +2519,10 @@ button,
   }
 
   .footer__header {
-    margin-right: -25px;
-    margin-bottom: 19px;
-    margin-left: -25px;
+    margin-bottom: 0;
     padding-top: 23px;
     padding-right: 25px;
+    padding-bottom: 19px;
     padding-left: 25px;
     border-top: 1px solid rgba(248, 253, 255, 0.7);
     cursor: pointer;
@@ -2519,7 +2533,7 @@ button,
     content: "";
     position: absolute;
     top: 28px;
-    right: 2px;
+    right: 27px;
     width: 15px;
     height: 1px;
     background-color: #f8fdff;
@@ -2535,17 +2549,9 @@ button,
     position: relative;
   }
 
-  .footer__nav-list {
-    display: none;
-  }
-
   .footer__contacts {
     position: relative;
     margin-left: 0;
-  }
-
-  .footer__contacts-list {
-    display: none;
   }
 
   .footer__contacts address {
@@ -2563,14 +2569,8 @@ button,
     display: block;
   }
 
-  .footer__contacts.is-open .footer__contacts-list {
+  .footer__contacts-list {
     display: block;
-    margin-right: -25px;
-    margin-left: -25px;
-    padding-right: 25px;
-    padding-bottom: 10px;
-    padding-left: 25px;
-    border-bottom: 1px solid rgba(248, 253, 255, 0.7);
   }
 
   .footer__contacts.is-open .footer__header::after {
@@ -2582,11 +2582,23 @@ button,
   }
 
   .footer__lists {
+    display: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    padding: 0 25px;
     padding-bottom: 10px;
+  }
+
+  .footer__accordion-container {
+    display: block;
+  }
+
+  .footer__accordion {
+    margin-right: -25px;
+    margin-left: -25px;
+    border-bottom: 1px solid rgba(248, 253, 255, 0.7);
   }
 
   .nojs .footer__nav-list,

@@ -149,3 +149,11 @@
 .page-header__button--nojs {
   display: none;
 }
+
+.page-header__button--js {
+  display: block;
+
+  @media (max-width: $tablet-size-max) {
+    display: none;
+  }
+}

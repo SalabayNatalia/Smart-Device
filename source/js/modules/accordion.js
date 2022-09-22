@@ -1,22 +1,13 @@
+const accordions = document.querySelector('[data-accordion]');
+const accordion = document.querySelectorAll('[data-accordion-item]');
 const headers = document.querySelectorAll('[data-accordion-header]');
-const accordions = document.querySelectorAll('[data-accordion-menu]');
-const ss = document.querySelectorAll('.footer__accordion');
 
 const openAccordion = () => {
-
-  accordions.forEach((accordion) => {
-    accordion.classList.remove('is-open');
-  });
-  if (headers) {
+  if (accordions) {
 
     headers.forEach((header) =>
       header.addEventListener('click', () => {
         const parent = header.parentNode;
-        ss.forEach((acc) => {
-          if (acc.classList.contains('is-open')) {
-            acc.classList.remove('is-open');
-          }
-        });
         if (parent.classList.contains('is-open')) {
           parent.classList.remove('is-open');
         } else {
@@ -26,12 +17,12 @@ const openAccordion = () => {
       })
     );
   }
-};
 
-function closeAccordion() {
-  accordions.forEach((child) => {
-    child.classList.remove('is-open');
+  function closeAccordion() {
+  accordion.forEach((item) => {
+    item.classList.remove('is-open');
   });
 }
+};
 
 export {openAccordion};

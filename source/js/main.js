@@ -4,6 +4,8 @@ import {anchor} from './modules/anchor';
 import {openText} from './modules/collapsible';
 import {openAccordion} from './modules/accordion';
 import {getMask} from './modules/mask';
+import {nojs} from './modules/nojs';
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
+    nojs();
     anchor();
     openText();
     openAccordion();

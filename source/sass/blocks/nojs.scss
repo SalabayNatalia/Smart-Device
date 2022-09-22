@@ -27,11 +27,3 @@
 .nojs .modal-nojs {
   display: block;
 }
-
-.page-header__button--js {
-  display: block;
-
-  @media (max-width: $tablet-size-max) {
-    display: none;
-  }
-}
