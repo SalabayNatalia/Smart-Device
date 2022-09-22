@@ -63,11 +63,11 @@
                 <label class="visually-hidden" for="your-name">Ваше имя:</label>
                 <input id="your-name" type="text" autofocus placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" data-modal-name required>
                 <label class=" visually-hidden" for="phone">Ваш телефон:</label>
-                <input data-phone-pattern="+7 (___) ___-__-__" data-phone-clear="false" id="phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
+                <input data-phone data-phone-pattern="+7 (___) ___-__-__" data-phone-clear="false" id="phone" type="tel" pattern="^[0-9]+$" maxlength="15" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
 
                 <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
               </div>
-              <label class="form__checkbox form__checkbox--consultation noselect">
+              <label class="form__checkbox form__checkbox--consultation form__check noselect">
                 <input class="form__checkbox-input" type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
                 <span></span>
                 Я согласен на обработку персональных данных
@@ -144,7 +144,7 @@
               <h2>О компании</h2>
               <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
               </p>
-              <p data-about-mobile>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. <span>Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span>
+              <p data-about-mobile>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. <span>Печатные платы и комплектующие Service Devices применяются на&nbsp;предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span>
               </p>
               <div class="about__collapsible">
                 <p>Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14 офисов по всей стране и 20 городов присутствия.</p>
@@ -192,10 +192,10 @@
                   </div>
                   <div class="consultation__input form__input">
                     <label class=" visually-hidden" for="your-phone">Ваш телефон:</label>
-                    <input data-phone-pattern="+7 (___) ___-__-__" data-phone-clear="false" id="your-phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
+                    <input data-phone data-phone-pattern="+7 (___) ___-__-__" data-phone-clear="false" id="your-phone" type="tel" pattern="^[0-9]+$" maxlength="15" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
                   </div>
                   <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
-                  <label class="form__checkbox form__checkbox--consultation noselect">
+                  <label class="form__checkbox form__checkbox--consultation consultation__check noselect">
                     <input class="form__checkbox-input" type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
                     <span></span>
                     Я согласен на обработку<br>персональных данных

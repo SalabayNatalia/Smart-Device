@@ -186,33 +186,12 @@
   }
 }
 
-.form__checkbox--consultation {
-  display: flex;
-  align-items: center;
-  order: 2;
-  margin-top: 15px;
-  padding-left: 25px;
-
-  gap: 11px;
-
-  @media (max-width: $tablet-size-max) {
-    margin-top: 5px;
-  }
-
-  @media (max-width: $mobile-size-max) {
-    margin-top: 0;
-    margin-left: 5px;
-  }
-}
-
-.form__checkbox--consultation span {
-  width: 14px;
-  height: 14px;
-  margin-bottom: 2px;
-  padding: 0;
-}
-
 .consultation__close {
   top: 19px;
   right: 15px;
+}
+
+.consultation__check {
+  margin-top: 15px;
+  padding-left: 25px;
 }

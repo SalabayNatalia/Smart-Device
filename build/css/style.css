@@ -765,8 +765,8 @@ button,
 
 .modal__close-btn {
   position: absolute;
-  top: 22px;
-  right: 22px;
+  top: 17px;
+  right: 13px;
   z-index: 1;
   width: 40px;
   height: 40px;
@@ -855,23 +855,6 @@ button,
   padding: 15px 60px 8px;
 }
 
-.modal__checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
-  padding-left: 35px;
-  gap: 5px;
-}
-
-.modal__checkbox span {
-  width: 16px;
-  height: 16px;
-  margin-left: 9px;
-}
-
 .modal__close-btn svg {
   width: 20px;
   height: 20px;
@@ -892,7 +875,7 @@ button,
   width: 100%;
   min-height: 120px;
   padding-top: 30px;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, #041827), to(rgba(255, 255, 255, 0)));
   background: -o-linear-gradient(#041827 90%, rgba(255, 255, 255, 0));
   background: linear-gradient(#041827 90%, rgba(255, 255, 255, 0));
@@ -921,6 +904,7 @@ button,
   -ms-flex-item-align: self-start;
   -ms-grid-row-align: self-start;
   align-self: self-start;
+  min-width: 160px;
   margin-top: 5px;
   margin-right: 60px;
   margin-left: auto;
@@ -976,9 +960,10 @@ button,
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-left: 11%;
-  -webkit-column-gap: 120px;
-  -moz-column-gap: 120px;
-  column-gap: 120px;
+}
+
+.contacts li:not(:last-child) {
+  margin-right: 120px;
 }
 
 .contacts a:hover .contacts__icon,
@@ -1007,6 +992,8 @@ button,
 
 .logo {
   display: block;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   margin-right: 9px;
 }
 
@@ -1382,31 +1369,14 @@ button,
   padding: 13px 68px 10px;
 }
 
-.form__checkbox--consultation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
-  margin-top: 15px;
-  padding-left: 25px;
-  gap: 11px;
-}
-
-.form__checkbox--consultation span {
-  width: 14px;
-  height: 14px;
-  margin-bottom: 2px;
-  padding: 0;
-}
-
 .consultation__close {
   top: 19px;
   right: 15px;
+}
+
+.consultation__check {
+  margin-top: 15px;
+  padding-left: 25px;
 }
 
 .footer {
@@ -1430,14 +1400,19 @@ button,
 .footer__social-list {
   display: -ms-grid;
   display: grid;
-  max-width: 165px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
   margin-left: 15px;
+  gap: 25px;
   -ms-grid-columns: (auto)[3];
   grid-template-columns: repeat(3, auto);
 }
 
 .footer__social-list a {
   display: block;
+  width: 30px;
+  height: 30px;
 }
 
 .footer__social-list a:hover .footer__social-icon,
@@ -1570,6 +1545,10 @@ button,
 }
 
 .nojs .modal-nojs {
+  display: block;
+}
+
+.nojs .footer__lists {
   display: block;
 }
 
@@ -1716,6 +1695,31 @@ button,
   box-shadow: 0 0 0 2px #2c39f2;
 }
 
+.form__checkbox--consultation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  cursor: pointer;
+  gap: 11px;
+}
+
+.form__checkbox--consultation span {
+  width: 14px;
+  height: 14px;
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+.form__check {
+  padding-left: 35px;
+}
+
 .logo-modal {
   width: 215px;
   margin: 0 auto;
@@ -1848,10 +1852,8 @@ button,
 }
 
 @media (max-width: 1150px) {
-  .contacts {
-    -webkit-column-gap: 40px;
-    -moz-column-gap: 40px;
-    column-gap: 40px;
+  .contacts li:not(:last-child) {
+    margin-right: 40px;
   }
 
   .consultation__wrapper {
@@ -1898,7 +1900,8 @@ button,
   }
 
   .contacts {
-    -ms-flex-item-align: start;
+    display: -ms-grid;
+    display: grid;
     -ms-grid-row-align: start;
     align-self: start;
     margin-top: 10px;
@@ -1906,6 +1909,17 @@ button,
     -webkit-column-gap: 40px;
     -moz-column-gap: 40px;
     column-gap: 40px;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contacts li:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .contacts a {
+    width: 20px;
+    height: 20px;
   }
 
   .contacts span {
@@ -1913,7 +1927,7 @@ button,
   }
 
   .printed-boards {
-    padding-top: 80px;
+    padding-top: 75px;
     padding-bottom: 205px;
   }
 
@@ -2080,10 +2094,6 @@ button,
     padding-bottom: 8px;
   }
 
-  .form__checkbox--consultation {
-    margin-top: 5px;
-  }
-
   .footer__wrapper {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
@@ -2110,11 +2120,6 @@ button,
   }
 
   .footer__social-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     margin-top: 10px;
   }
 
@@ -2122,10 +2127,6 @@ button,
     -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1;
-  }
-
-  .footer__social-list li {
-    margin-left: 25px;
   }
 
   .footer__nav {
@@ -2147,6 +2148,10 @@ button,
 
   .footer__accordion-container {
     grid-column: 1/-1;
+  }
+
+  .form__checkbox--consultation {
+    margin-top: 5px;
   }
 }
 
@@ -2226,6 +2231,7 @@ button,
   .page-header__wrapper {
     min-height: 70px;
     padding-top: 14px;
+    padding-bottom: 20px;
   }
 
   .contacts {
@@ -2450,11 +2456,6 @@ button,
     padding-top: 13px;
   }
 
-  .form__checkbox--consultation {
-    margin-top: 0;
-    margin-left: 5px;
-  }
-
   .footer {
     padding-top: 35px;
   }
@@ -2469,7 +2470,7 @@ button,
 
   .footer__logo-social {
     display: block;
-    margin-bottom: 23px;
+    margin-bottom: 29px;
   }
 
   .footer__logo {
@@ -2479,17 +2480,11 @@ button,
   }
 
   .footer__social-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     max-width: none;
     margin-left: 0;
-    gap: 25px;
   }
 
   .footer__social-list li {
@@ -2587,6 +2582,11 @@ button,
   .nojs .footer__header::after,
   .nojs .footer__header::before {
     display: none;
+  }
+
+  .form__checkbox--consultation {
+    margin-top: 0;
+    margin-left: 5px;
   }
 }
 
