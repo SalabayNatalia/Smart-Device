@@ -186,7 +186,7 @@
   }
 }
 
-.consultation__checkbox {
+.form__checkbox--consultation {
   display: flex;
   align-items: center;
   order: 2;
@@ -205,7 +205,7 @@
   }
 }
 
-.consultation__checkbox span {
+.form__checkbox--consultation span {
   width: 14px;
   height: 14px;
   margin-bottom: 2px;

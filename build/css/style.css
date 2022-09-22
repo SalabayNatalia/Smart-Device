@@ -754,9 +754,13 @@ button,
 
 .modal__content {
   position: relative;
-  width: 600px;
-  padding: 40px;
-  background-color: #ffffff;
+  width: 500px;
+  padding-top: 36px;
+  padding-right: 37px;
+  padding-bottom: 43px;
+  padding-left: 41px;
+  background-color: #00b2ff;
+  border-radius: 3px;
 }
 
 .modal__close-btn {
@@ -808,26 +812,6 @@ button,
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
-}
-
-.modal__wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(4, 24, 39, 0.7);
-}
-
-.modal__content {
-  position: relative;
-  width: 500px;
-  padding-top: 36px;
-  padding-right: 37px;
-  padding-bottom: 43px;
-  padding-left: 41px;
-  background-color: #00b2ff;
-  border-radius: 3px;
 }
 
 .modal__content h3 {
@@ -1398,7 +1382,7 @@ button,
   padding: 13px 68px 10px;
 }
 
-.consultation__checkbox {
+.form__checkbox--consultation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1413,7 +1397,7 @@ button,
   gap: 11px;
 }
 
-.consultation__checkbox span {
+.form__checkbox--consultation span {
   width: 14px;
   height: 14px;
   margin-bottom: 2px;
@@ -1863,12 +1847,6 @@ button,
 }
 }
 
-@media (max-width: 1900px) {
-  .modal__content {
-    margin: 146px auto;
-  }
-}
-
 @media (max-width: 1150px) {
   .contacts {
     -webkit-column-gap: 40px;
@@ -2102,7 +2080,7 @@ button,
     padding-bottom: 8px;
   }
 
-  .consultation__checkbox {
+  .form__checkbox--consultation {
     margin-top: 5px;
   }
 
@@ -2472,7 +2450,7 @@ button,
     padding-top: 13px;
   }
 
-  .consultation__checkbox {
+  .form__checkbox--consultation {
     margin-top: 0;
     margin-left: 5px;
   }

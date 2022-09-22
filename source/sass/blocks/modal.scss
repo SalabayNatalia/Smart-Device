@@ -16,7 +16,8 @@
   visibility: hidden;
   opacity: 0;
 
-  transition: opacity $trans-modal, transform $trans-modal,
+  transition: opacity $trans-modal,
+    transform $trans-modal,
     visibility $trans-modal;
 
   pointer-events: none;
@@ -63,10 +64,14 @@
 
     position: relative;
 
-    width: 600px;
-    padding: 40px;
+    width: 500px;
+    padding-top: 36px;
+    padding-right: 37px;
+    padding-bottom: 43px;
+    padding-left: 41px;
 
-    background-color: $color-default-white;
+    background-color: $deep-sky-blue;
+    border-radius: 3px;
   }
 
   &__close-btn {
@@ -126,146 +131,6 @@
   }
 }
 
-// .modal {
-//   display: none;
-// }
-
-// .modal__overlay {
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-
-//   background-color: rgba($black-pearl, 0.7);
-// }
-
-// .modal__wrapper {
-//   position: relative;
-
-//   width: 500px;
-//   margin: 146px 700px;
-//   padding-top: 36px;
-//   padding-right: 37px;
-//   padding-bottom: 43px;
-//   padding-left: 41px;
-
-//   background-color: $deep-sky-blue;
-//   border-radius: 3px;
-
-//   @media (max-width: 1900px) {
-//     margin: 146px auto;
-//   }
-// }
-
-// .modal h3 {
-//   margin-bottom: 5px;
-
-//   font-size: 30px;
-//   line-height: 140%;
-// }
-
-// .modal p {
-//   margin-bottom: 40px;
-// }
-
-// .modal__form {
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .modal__inputs input,
-// .modal__inputs textarea {
-//   width: 100%;
-// }
-
-// .modal__inputs input {
-//   margin-bottom: 21px;
-//   padding: 10px 15px 12px 14px;
-// }
-
-// .modal__inputs textarea {
-//   margin-bottom: 16px;
-//   padding: 21px 15px 88px 14px;
-// }
-
-// .modal__button {
-//   width: 100%;
-//   margin-bottom: 20px;
-//   padding: 15px 60px 8px;
-// }
-
-// .modal__checkbox {
-//   display: flex;
-//   order: 2;
-//   padding-left: 35px;
-
-//   gap: 5px;
-// }
-
-// .modal__checkbox span {
-//   width: 16px;
-//   height: 16px;
-//   margin-left: 9px;
-// }
-
-// .modal__close {
-//   position: absolute;
-//   top: 25px;
-//   right: 23px;
-//   z-index: 10;
-
-//   display: block;
-//   width: 20px;
-//   height: 20px;
-//   padding: 0;
-
-//   background-color: transparent;
-//   background-image: url("../img/close.svg");
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   border: none;
-//   cursor: pointer;
-
-//   &:hover,
-//   &:focus {
-//     opacity: 0.5;
-//   }
-// }
-
-// .modal {
-//   display: none;
-// }
-
-.modal__wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  background-color: rgba($black-pearl, 0.7);
-}
-
-.modal__content {
-  position: relative;
-  // top: -217px;
-
-  width: 500px;
-  // margin: 146px auto;
-  padding-top: 36px;
-  padding-right: 37px;
-  padding-bottom: 43px;
-  padding-left: 41px;
-
-  background-color: $deep-sky-blue;
-  border-radius: 3px;
-
-  @media (max-width: 1900px) {
-    margin: 146px auto;
-  }
-}
-
 .modal__content h3 {
   margin-bottom: 5px;
 
@@ -317,29 +182,6 @@
   margin-left: 9px;
 }
 
-// .modal__close-btn {
-//   position: absolute;
-//   top: 25px;
-//   right: 23px;
-//   z-index: 10;
-
-//   display: block;
-//   width: 20px;
-//   height: 20px;
-//   padding: 0;
-
-//   background-color: transparent;
-//   background-image: url("../img/close.svg");
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   border: none;
-//   cursor: pointer;
-
-//   &:hover,
-//   &:focus {
-//     opacity: 0.5;
-//   }
-// }
 .modal__close-btn svg {
   width: 20px;
   height: 20px;

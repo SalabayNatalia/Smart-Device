@@ -1,77 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Описание проекта">
-  <title>Smart-Device-modal</title>
+  <title>Smart-Device</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/PTMono-Regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/RobotoCondensed-Bold.woff2" as="font" crossorigin="anonymous">
+
 </head>
 
 <body class="nojs">
-  <header class="page-header-modal">
-    <div class="container">
-      <div class="logo-modal">
-        <a class="logo-image" href="index.html">
-          <svg width="215" height="55" role="img" aria-label="logo">
-            <use xlink:href="img/sprite_auto.svg#logo"></use>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <!-- <section class="modal form modal-nojs " data-modal="feedback">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <h3>Закажите звонок</h3>
-          <p>
-            Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время
-          </p>
-          <form class="modal__form" action="https://echo.htmlacademy.ru" method="get" autocomplete="off">
-            <div class="modal__inputs form__input noselect">
-              <label class="visually-hidden" for="your-name">Ваше имя:</label>
-              <input id="your-name" type="text" autofocus placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" data-modal-name required>
-              <label class=" visually-hidden" for="phone">Ваш телефон:</label>
-              <input data-phone-pattern="+7 (___) ___-__-__" data-phone-clear="false" id="phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
-
-              <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
-            </div>
-            <label class="consultation__checkbox form__checkbox noselect">
-              <input class="form__checkbox-input" type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
-              <span></span>
-              Я согласен на обработку персональных данных
-            </label>
-            <button class="modal__button form__button noselect" type="submit">Отправить</button>
-          </form>
+  <div class="wrapper">
+    <header class="page-header page-header--modal" data-header>
+      <div class="page-header__wrapper">
+        <div class="container">
+          <nav>
+            <a class="page-header__logo logo">
+              <picture>
+                <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
+                <img src="img/logo-desktop.svg" width="215" height="55" alt="Smart Device">
+              </picture>
+            </a>
+            <ul class="page-header__contacts contacts list-reset">
+              <li>
+                <a href="mailto:info@sd.ru">
+                  <svg class="contacts__icon" width="20" height="20" role="img" aria-label="email">
+                    <use xlink:href="img/sprite_auto.svg#email"></use>
+                  </svg>
+                  <span class="contacts__text">info@sd.ru</span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+74950005252">
+                  <svg class="contacts__icon" width="20" height="20" role="img" aria-label="phone">
+                    <use xlink:href="img/sprite_auto.svg#phone"></use>
+                  </svg>
+                  <span class="contacts__text">+7 (495) 000 52 52</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </section> -->
-    <section class="modal modal-nojs form">
-      <div class="modal__wrapper" data-modal>
-        <h3>Закажите звонок</h3>
-        <p>
-          Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время
-        </p>
-        <form class="modal__form" action="https://echo.htmlacademy.ru" method="get" autocomplete="off">
-          <div class="modal__inputs form__input noselect">
-            <label class="visually-hidden" for="your-name">Ваше имя:</label>
-            <input id="your-name" type="text" autofocus placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" data-modal-name required>
-            <label class=" visually-hidden" for="phone">Ваш телефон:</label>
-            <input id="phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш телефон." required>
-            <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
+    </header>
+    <main>
+      <section class="consultation form" id="consultation">
+        <div class="container">
+          <div class="consultation__wrapper">
+            <div class="consultation__wrapper-form">
+              <h3>Остались вопросы? Задайте их нам!</h3>
+              <p>Мы проконсультируем Вас бесплатно</p>
+              <form class="consultation__form" action="https://echo.htmlacademy.ru" method="get">
+                <div class="consultation__form-content noselect">
+                  <div class="consultation__input consultation__input--name form__input">
+                    <label class="visually-hidden" for="name">Ваше имя:</label>
+                    <input id="name" type="text" placeholder="Имя" name="name" aria-label="Ваше имя." minlength="2" maxlength="25" required>
+                  </div>
+                  <div class="consultation__input form__input">
+                    <label class=" visually-hidden" for="your-phone">Ваш телефон:</label>
+                    <input data-phone-pattern="+7 (___) ___-__-__" data-phone-clear="false" id="your-phone" type="tel" pattern="^[0-9]+$" placeholder="Телефон" name="telephone" aria-label="Ваш елефона" required>
+                  </div>
+                  <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
+                  <label class="form__checkbox form__checkbox--consultation noselect">
+                    <input class="form__checkbox-input" type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
+                    <span></span>
+                    Я согласен на обработку<br>персональных данных
+                  </label>
+                  <button class="consultation__button form__button" type="submit">Задать вопрос</button>
+                </div>
+              </form>
+            </div>
           </div>
-          <label class="modal__checkbox form__checkbox noselect">
-            <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
-            <span></span>
-            Я согласен на обработку&nbsp;&nbsp;персональных данных
-          </label>
-          <button class="modal__button form__button noselect" type="submit">Отправить</button>
-        </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__logo-social">
+            <a class="footer__logo">
+              <svg width="215" height="55" role="img" aria-label="logo">
+                <use xlink:href="img/sprite_auto.svg#logo"></use>
+              </svg>
+            </a>
+            <ul class="footer__social-list list-reset">
+              <li class="footer__social-item">
+                <a href="#">
+                  <svg class="footer__social-icon" width="30" height="30" role="img" aria-label="ok">
+                    <use xlink:href="img/sprite_auto.svg#ok"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a href="#">
+                  <svg class="footer__social-icon" width="30" height="30" role="img" aria-label="vk">
+                    <use xlink:href="img/sprite_auto.svg#vk"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social-item footer__social-item--pinterest">
+                <a href="#">
+                  <svg class="footer__social-icon" width="30" height="30" role="img" aria-label="pinterest">
+                    <use xlink:href="img/sprite_auto.svg#pinterest"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__accordion-container" data-accordion>
+
+            <div class="footer__nav footer__accordion" data-accordion-item>
+              <h2 class="footer__header" data-accordion-header>Разделы сайта</h2>
+              <div class="footer__lists">
+                <ul class="list-reset footer__nav-list footer__accordion-list">
+                  <li>
+                    <a href="#about">О Компании</a>
+                  </li>
+                  <li>
+                    <a href="#catalog">Продукты</a>
+                  </li>
+                  <li>
+                    <a href="#">Производство печатных плат</a>
+                  </li>
+                  <li>
+                    <a href="#">Монтаж печатных плат</a>
+                  </li>
+                </ul>
+                <ul class="list-reset footer__nav-list footer__accordion-list">
+                  <li>
+                    <a href="#">Комплектующие</a>
+                  </li>
+                  <li>
+                    <a href="#">Доставка</a>
+                  </li>
+                  <li>
+                    <a href="#">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer__contacts footer__accordion" data-accordion-item>
+              <h2 class="footer__header" data-accordion-header>Наш офис</h2>
+              <div class="footer__lists">
+                <ul class="list-reset footer__contacts-list footer__accordion-list">
+                  <li>
+                    <address>г. Мытищи, Олимпийский проспект, д.10</address>
+                  </li>
+                  <li><a href="tel:84955894050">+7 (495) 589-40-50</a></li>
+                  <li><a href="tel:89253895829">+7 (925) 389-58-29</a></li>
+                  <li><a href="tel:89253647813">+7 (925) 364-78-13</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </header>
+    </footer>
+  </div>
+  <script src="js/main.min.js"></script>
 </body>
 
 </html>

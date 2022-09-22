@@ -19,10 +19,10 @@ const openAccordion = () => {
   }
 
   function closeAccordion() {
-  accordion.forEach((item) => {
-    item.classList.remove('is-open');
-  });
-}
+    accordion.forEach((item) => {
+      item.classList.remove('is-open');
+    });
+  }
 };
 
 export {openAccordion};
