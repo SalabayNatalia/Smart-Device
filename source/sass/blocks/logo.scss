@@ -1,8 +1,17 @@
 .logo {
+  display: block;
   margin-right: 9px;
 
   @media (max-width: $mobile-size-max) {
     width: 35px;
     height: 35px;
+  }
+}
+
+.logo img {
+  min-width: 215px;
+
+  @media (max-width: $mobile-size-max) {
+    min-width: 35px;
   }
 }

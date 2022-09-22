@@ -44,18 +44,16 @@
                 </a>
               </li>
             </ul>
-            <a class="page-header__button page-header__button--js" data-button-open-modal>
-              <span>Заказать звонок</span>
-            </a>
-            <a href="modal.html" class="page-header__button page-header__button--nojs">
+            <a href="modal.html" class="page-header__button page-header__button--js" data-open-modal="feedback">
               <span>Заказать звонок</span>
             </a>
           </nav>
         </div>
       </div>
-      <section class="page-header__modal modal form">
-        <div class="modal__overlay" data-overlay>
-          <div class="modal__wrapper" data-modal>
+      <section class="modal modal--preload" data-modal="feedback">
+        <div class="modal__wrapper">
+          <div class="modal__overlay" data-close-modal></div>
+          <div class="modal__content">
             <h3>Закажите звонок</h3>
             <p>
               Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время
@@ -69,14 +67,18 @@
 
                 <textarea placeholder="Ваш вопрос" name="user-question" aria-label="Задайте ваш вопрос"></textarea>
               </div>
-              <label class="modal__checkbox form__checkbox noselect">
-                <input type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
+              <label class="consultation__checkbox form__checkbox noselect">
+                <input class="form__checkbox-input" type="checkbox" aria-label="Поставьте галочку, если согласны на обработку персональных данных." required>
                 <span></span>
-                Я согласен на обработку&nbsp;&nbsp;персональных данных
+                Я согласен на обработку<br>персональных данных
               </label>
               <button class="modal__button form__button noselect" type="submit">Отправить</button>
             </form>
-            <button class="modal__close" data-close-modal type="button" aria-label="Закрыть окно"></button>
+            <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+              <svg width="15" height="15">
+                <use xlink:href="img/sprite_auto.svg#icon-close"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -94,14 +96,14 @@
         <div class="container">
           <h2 class="visually-hidden">Преимущества</h2>
           <ul class="list-reset">
-            <li class="advantages__item" tabindex="0">
+            <li class="advantages__item">
               <svg width="35" height="35">
                 <use xlink:href="img/sprite_auto.svg#stopwatch"></use>
               </svg>
               <h3>Оперативные сроки</h3>
               <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
             </li>
-            <li class="advantages__item" tabindex="0">
+            <li class="advantages__item">
               <svg width="35" height="35">
                 <use xlink:href="img/sprite_auto.svg#hired"></use>
               </svg>
@@ -109,14 +111,14 @@
               <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспечивает хорошее качество нашей продукции.
               </p>
             </li>
-            <li class="advantages__item" tabindex="0">
+            <li class="advantages__item">
               <svg width="35" height="35">
                 <use xlink:href="img/sprite_auto.svg#detective"></use>
               </svg>
               <h3>Полная конфиденциальность</h3>
               <p>По желанию клиента&nbsp;&nbsp;мы обеспечиваем полную конфиденциальность.</p>
             </li>
-            <li class="advantages__item" tabindex="0">
+            <li class="advantages__item">
               <svg width="35" height="35">
                 <use xlink:href="img/sprite_auto.svg#tag"></use>
               </svg>
@@ -210,8 +212,8 @@
       <div class="container">
         <div class="footer__wrapper">
           <div class="footer__logo-social">
-            <a>
-              <svg class="footer__logo" width="215" height="55" role="img" aria-label="logo">
+            <a class="footer__logo">
+              <svg width="215" height="55" role="img" aria-label="logo">
                 <use xlink:href="img/sprite_auto.svg#logo"></use>
               </svg>
             </a>
@@ -241,29 +243,33 @@
           </div>
           <div class="footer__nav footer__accordion" data-accordion>
             <h2 class="footer__header" data-accordion-header>Разделы сайта</h2>
-            <ul class="list-reset footer__nav-list footer__accordion-list" data-accordion-menu>
-              <li>
-                <a href="#about">О Компании</a>
-              </li>
-              <li>
-                <a href="#catalog">Продукты</a>
-              </li>
-              <li>
-                <a href="#">Производство печатных плат</a>
-              </li>
-              <li>
-                <a href="#">Монтаж печатных плат</a>
-              </li>
-              <li>
-                <a href="#">Комплектующие</a>
-              </li>
-              <li>
-                <a href="#">Доставка</a>
-              </li>
-              <li>
-                <a href="#">Контакты</a>
-              </li>
-            </ul>
+            <div class="footer__lists">
+              <ul class="list-reset footer__nav-list footer__accordion-list" data-accordion-menu>
+                <li>
+                  <a href="#about">О Компании</a>
+                </li>
+                <li>
+                  <a href="#catalog">Продукты</a>
+                </li>
+                <li>
+                  <a href="#">Производство печатных плат</a>
+                </li>
+                <li>
+                  <a href="#">Монтаж печатных плат</a>
+                </li>
+              </ul>
+              <ul class="list-reset footer__nav-list footer__accordion-list">
+                <li>
+                  <a href="#">Комплектующие</a>
+                </li>
+                <li>
+                  <a href="#">Доставка</a>
+                </li>
+                <li>
+                  <a href="#">Контакты</a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="footer__contacts footer__accordion">
             <h2 class="footer__header" data-accordion-header>Наш офис</h2>

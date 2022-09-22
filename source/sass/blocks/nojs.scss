@@ -20,26 +20,18 @@
   display: none;
 }
 
-.nojs .modal {
-  display: none;
-}
+// .nojs .modal {
+//   display: none;
+// }
 
-.nojs .modal-nojs {
-  display: block;
-}
+// .nojs .modal-nojs {
+//   display: block;
+// }
 
-.nojs .page-header__button--nojs {
+.page-header__button--js {
   display: block;
 
   @media (max-width: $tablet-size-max) {
     display: none;
   }
-}
-
-.nojs .page-header__button--js {
-  display: none;
-}
-
-.nojs .modal__close--nojs {
-  display: none;
 }

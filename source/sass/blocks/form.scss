@@ -120,7 +120,7 @@
   background-position: center;
 }
 
-.form__checkbox input[type="checkbox"]:hover ~ span,
+.form__checkbox:hover span,
 .form__checkbox input[type="checkbox"]:focus ~ span {
   background-color: $picton-blue;
   box-shadow: 0 0 0 2px $color-neon-blue;
