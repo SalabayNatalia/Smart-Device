@@ -1,30 +1,62 @@
 const getMask = () => {
-  var eventCalllback = function (e) {
-        var el = e.target,
-        clearVal = el.dataset.phoneClear,
-        pattern = el.dataset.phonePattern,
-        matrixDef = "+7(___) ___-__-__",
-        matrix = pattern ? pattern : matrixDef,
-        i = 0,
-        def = matrix.replace(/\D/g, ""),
-        val = e.target.value.replace(/\D/g, "");
-        if (clearVal !== 'false' && e.type === 'blur') {
-            if (val.length < matrix.match(/([\_\d])/g).length) {
-                e.target.value = '';
-                return;
-            }
+  [].forEach.call(
+    document.querySelectorAll('input[type="tel"]'),
+    function (input) {
+      let keyCode;
+      function mask(event) {
+        // eslint-disable-next-line no-unused-expressions
+        event.keyCode && (keyCode = event.keyCode);
+        // eslint-disable-next-line no-invalid-this
+        let pos = this.selectionStart;
+        // eslint-disable-next-line curly
+        if (pos < 3) event.preventDefault();
+        // eslint-disable-next-line one-var
+        let matrix = '+7 (___) ___ ____',
+          i = 0,
+          def = matrix.replace(/\D/g, ''),
+          // eslint-disable-next-line no-invalid-this
+          val = this.value.replace(/\D/g, ''),
+          // eslint-disable-next-line camelcase
+          new_value = matrix.replace(/[_\d]/g, function (a) {
+            return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+          });
+        // eslint-disable-next-line camelcase
+        i = new_value.indexOf('_');
+        // eslint-disable-next-line eqeqeq
+        if (i != -1) {
+          // eslint-disable-next-line no-unused-expressions
+          i < 5 && (i = 3);
+          // eslint-disable-next-line camelcase
+          new_value = new_value.slice(0, i);
         }
-        if (def.length >= val.length) val = def;
-        e.target.value = matrix.replace(/./g, function (a) {
-            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
-        });
-    }
-    var phoneInputs = document.querySelectorAll('[data-phone-pattern]');
-    for (let elem of phoneInputs) {
-        for (let ev of ['input', 'blur', 'focus']) {
-            elem.addEventListener(ev, eventCalllback);
-        }
-    }
-}
+        let reg = matrix
+          // eslint-disable-next-line no-invalid-this
+          .substr(0, this.value.length)
+          .replace(/_+/g, function (a) {
+            return '\\d{1,' + a.length + '}';
+          })
+          .replace(/[+()]/g, '\\$&');
+        reg = new RegExp('^' + reg + '$');
+        if (
+          // eslint-disable-next-line no-invalid-this
+          !reg.test(this.value) ||
+          // eslint-disable-next-line no-invalid-this
+          this.value.length < 5 ||
+          (keyCode > 47 && keyCode < 58)
+        )
+          // eslint-disable-next-line no-invalid-this, camelcase, curly
+          this.value = new_value;
+        // eslint-disable-next-line eqeqeq, no-invalid-this, curly
+        if (event.type == 'blur' && this.value.length < 5) this.value = '';
+      }
 
-export {getMask};
+      input.addEventListener('input', mask, false);
+      input.addEventListener('focus', mask, false);
+      input.addEventListener('blur', mask, false);
+      input.addEventListener('keydown', mask, false);
+    }
+  );
+
+};
+
+export { getMask };

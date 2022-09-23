@@ -888,12 +888,9 @@ button,
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-column-gap: 20px;
-  -moz-column-gap: 20px;
-  column-gap: 20px;
+  -webkit-column-gap: 17px;
+  -moz-column-gap: 17px;
+  column-gap: 17px;
 }
 
 .page-header__icon {
@@ -951,19 +948,16 @@ button,
 }
 
 .contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  margin-top: 15px;
   margin-left: 11%;
-}
-
-.contacts li:not(:last-child) {
-  margin-right: 120px;
+  -webkit-column-gap: 44px;
+  -moz-column-gap: 44px;
+  column-gap: 44px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
 }
 
 .contacts a:hover .contacts__icon,
@@ -1852,8 +1846,8 @@ button,
 }
 
 @media (max-width: 1150px) {
-  .contacts li:not(:last-child) {
-    margin-right: 40px;
+  .contacts {
+    margin-left: 0;
   }
 
   .consultation__wrapper {
@@ -1900,8 +1894,6 @@ button,
   }
 
   .contacts {
-    display: -ms-grid;
-    display: grid;
     -ms-grid-row-align: start;
     align-self: start;
     margin-top: 10px;
@@ -1911,10 +1903,6 @@ button,
     column-gap: 40px;
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-  }
-
-  .contacts li:not(:last-child) {
-    margin-right: 0;
   }
 
   .contacts a {
